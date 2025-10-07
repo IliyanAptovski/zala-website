@@ -1,0 +1,128 @@
+/* ===== ZALA THEME ===== */
+
+:root {
+  --bg-color: #000;
+  --accent-color: #00ff88;
+  --text-color: #e0ffe0;
+  --font-main: 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid var(--accent-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+}
+
+.lang-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-toggle button.active,
+.lang-toggle button:hover {
+  color: var(--accent-color);
+}
+
+/* Content */
+main.content {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 15px var(--accent-color);
+}
+
+.hero .tagline {
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Quotes */
+#quotes-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quote-card {
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--accent-color);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  main.content {
+    padding: 1rem;
+  }
+}
