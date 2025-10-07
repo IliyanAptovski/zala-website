@@ -1,7 +1,7 @@
 const quotes = [
-  { text: "Bro, who turned off the lights?!", author: "Alex", date: "2024-12-10" },
-  { text: "Zala doesn’t sleep. It waits.", author: "Mira" },
-  { text: "We built this place from chaos.", author: "Niki" },
+  { text: "Там дупката я няма ако я виждаш!", author: "Денис", date: "2019" },
+  { text: "Слези на горе по стълбите.", author: "На Севди баща му", date: "2018" },
+  { text: "Америка е голям град.", author: "Денис", date: "2019" },
 ];
 
 window.addEventListener('DOMContentLoaded', () => {
