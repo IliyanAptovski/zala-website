@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,32 +8,32 @@
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/quotes.js"></script>
 </head>
-<body>
+<body class="quotes">
   <header class="navbar">
     <div class="logo">ZALA</div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="renovation.html">Renovation</a></li>
-        <li><a href="quotes.html" class="active">Quotes</a></li>
-        <li><a href="stories.html">Scary Stories</a></li>
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="renovation.html" id="nav-renovation">Renovation</a></li>
+        <li><a href="quotes.html" id="nav-quotes" class="active">Quotes</a></li>
+        <li><a href="stories.html" id="nav-stories">Scary Stories</a></li>
       </ul>
     </nav>
     <div class="lang-toggle">
-      <button id="lang-en" class="active">🇬🇧</button>
-      <button id="lang-bg">🇧🇬</button>
+      <button id="lang-en">🇬🇧</button>
+      <button id="lang-bg" class="active">🇧🇬</button>
     </div>
   </header>
 
-  <main class="content quotes">
-    <h1>Zala Quotes</h1>
+  <main class="content">
+    <h1 id="page-title">Цитати от Залата</h1>
     <div id="quotes-container">
-      <!-- Quotes will be loaded from quotes.js -->
+      <!-- Quotes loaded via JS -->
     </div>
   </main>
 
   <footer>
-    <p>© Zala 2025</p>
+    <p id="footer-text">© Зала 2025</p>
   </footer>
 </body>
 </html>
