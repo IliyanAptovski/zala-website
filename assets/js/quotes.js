@@ -1,4 +1,3 @@
-// Each quote contains both English and Bulgarian text
 const quotes = [
   {
     en: {
@@ -783,29 +782,54 @@ const quotes = [
 ];
 
 
-// Function to render quotes in the selected language
-function renderQuotes(lang = "bg") {
-  const container = document.getElementById("quotes-container");
-  if (!container) return;
-  container.innerHTML = ""; // Clear previous
+// Function to render quotes
+function renderQuotes(lang = window.getCurrentLanguage ? window.getCurrentLanguage() : 'bg') {
+  const container = document.getElementById('quotes-container');
+  if (!container) {
+    console.log('Quotes container not found');
+    return;
+  }
+  
+  console.log('Rendering quotes in language:', lang);
+  
+  container.innerHTML = '';
 
   quotes.forEach((quote) => {
-    const q = quote[lang];
-    const div = document.createElement("div");
-    div.className = "quote-card";
+    const q = quote[lang] || quote['bg']; // Fallback to Bulgarian
+    const div = document.createElement('div');
+    div.className = 'quote-card';
     div.innerHTML = `
-      <p class="quote-text">“${q.text}”</p>
-      <p class="quote-author">— ${q.author}${q.date ? ", " + q.date : ""}</p>
+      <p class="quote-text">"${q.text}"</p>
+      <p class="quote-author">— ${q.author}${q.date ? ', ' + q.date : ''}</p>
     `;
     container.appendChild(div);
   });
+  
+  console.log('Rendered', quotes.length, 'quotes');
 }
 
-// Initial render after language is set
-document.addEventListener("DOMContentLoaded", () => {
-  renderQuotes(currentLang);
-
-  // Re-render quotes whenever language changes
-  document.getElementById("lang-en").addEventListener("click", () => renderQuotes("en"));
-  document.getElementById("lang-bg").addEventListener("click", () => renderQuotes("bg"));
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Quotes.js loaded, current page:', window.location.pathname);
+  
+  // Only initialize if we're on the quotes page
+  if (document.body.classList.contains('quotes')) {
+    console.log('On quotes page, initializing quotes...');
+    
+    // Initial render
+    const currentLang = window.getCurrentLanguage ? window.getCurrentLanguage() : 'bg';
+    renderQuotes(currentLang);
+    
+    // Listen for language button clicks
+    document.getElementById('lang-en')?.addEventListener('click', () => {
+      setTimeout(() => renderQuotes('en'), 100);
+    });
+    
+    document.getElementById('lang-bg')?.addEventListener('click', () => {
+      setTimeout(() => renderQuotes('bg'), 100);
+    });
+  }
 });
+
+// Make functions available globally
+window.renderQuotes = renderQuotes;

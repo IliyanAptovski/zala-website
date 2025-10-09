@@ -1,88 +1,160 @@
-// ===== ZALA MULTILINGUAL SYSTEM =====
-
 const translations = {
-  en: {
-    nav: {
-      home: "Home",
-      renovation: "Renovation",
-      quotes: "Quotes",
-      stories: "Scary Stories",
-    },
-    heroTitle: "Welcome to the Zala",
-    tagline: "“If you don't give it to us, we'll take it ourselves!”",
-    page: {
-      renovation: {
-        title: "The Evolution of the Zala",
-        text: "Follow our transformation through time.",
-      },
-      quotes: { title: "Zala Quotes" },
-      stories: { title: "Scary Stories from Zala" },
-    },
-    footer: "© Zala 2025",
+  'en': {
+    // Navigation
+    'nav.home': 'Home',
+    'nav.renovation': 'Renovation',
+    'nav.quotes': 'Quotes',
+    'nav.stories': 'Scary Stories',
+    'nav.login': 'Login',
+    'nav.signup': 'Sign Up',
+    'nav.logout': 'Logout',
+    'nav.greeting': 'Hello, {name}!',
+    
+    // Home page
+    'hero.title': 'Welcome to The Hall',
+    'hero.tagline': '“If you don\'t give it to us, we\'ll take it ourselves!”',
+    
+    // Page titles and content
+    'page.renovation.title': 'The Evolution of the Zala',
+    'page.renovation.text': 'Follow our transformation through time.',
+    'page.quotes.title': 'Zala Quotes',
+    'page.stories.title': 'Scary Stories from Zala',
+    
+    // Footer
+    'footer.text': '© Zala 2025'
   },
-  bg: {
-    nav: {
-      home: "Начало",
-      renovation: "Реновация",
-      quotes: "Цитати",
-      stories: "Страшни истории",
-    },
-    heroTitle: "Добре дошли в Залата",
-    tagline: "„Ако не ни го дадеш, ще си го вземем сами!“",
-    page: {
-      renovation: {
-        title: "Ремонт на Залата",
-        text: "Проследете нашата трансформация през времето.",
-      },
-      quotes: { title: "Цитати от Залата" },
-      stories: { title: "Страшни истории от Залата" },
-    },
-    footer: "© Зала 2025",
-  },
+  'bg': {
+    // Navigation
+    'nav.home': 'Начало',
+    'nav.renovation': 'Реновация',
+    'nav.quotes': 'Цитати',
+    'nav.stories': 'Страшни истории',
+    'nav.login': 'Вход',
+    'nav.signup': 'Регистрация',
+    'nav.logout': 'Изход',
+    'nav.greeting': 'Здравей, {name}!',
+    
+    // Home page
+    'hero.title': 'Добре дошли в Залата',
+    'hero.tagline': '„Ако не ни го дадеш, ще си го вземем сами!“',
+    
+    // Page titles and content
+    'page.renovation.title': 'Ремонт на Залата',
+    'page.renovation.text': 'Проследете нашата трансформация през времето.',
+    'page.quotes.title': 'Цитати от Залата',
+    'page.stories.title': 'Страшни истории от Залата',
+    
+    // Footer
+    'footer.text': '© Зала 2025'
+  }
 };
 
-let currentLang = "bg";
-
-function setLanguage(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  const t = translations[lang];
-
-  // Navbar
-  document.getElementById("nav-home").textContent = t.nav.home;
-  document.getElementById("nav-renovation").textContent = t.nav.renovation;
-  document.getElementById("nav-quotes").textContent = t.nav.quotes;
-  document.getElementById("nav-stories").textContent = t.nav.stories;
-
-  // Footer
-  document.getElementById("footer-text").textContent = t.footer;
-
-  // Hero (only exists on home)
-  const heroTitle = document.getElementById("hero-title");
-  const heroTagline = document.getElementById("hero-tagline");
-  if (heroTitle) heroTitle.textContent = t.heroTitle;
-  if (heroTagline) heroTagline.textContent = t.tagline;
-
-  // Page-specific
-  const bodyClass = document.body.classList;
-  if (bodyClass.contains("renovation")) {
-    document.getElementById("page-title").textContent = t.page.renovation.title;
-    document.getElementById("page-text").textContent = t.page.renovation.text;
-  }
-  if (bodyClass.contains("quotes")) {
-    document.getElementById("page-title").textContent = t.page.quotes.title;
-  }
-  if (bodyClass.contains("stories")) {
-    document.getElementById("page-title").textContent = t.page.stories.title;
-  }
-
-  // Language toggle active states
-  document.getElementById("lang-en").classList.toggle("active", lang === "en");
-  document.getElementById("lang-bg").classList.toggle("active", lang === "bg");
+// Get current language from localStorage or default to 'bg'
+function getCurrentLanguage() {
+  return localStorage.getItem('zala-lang') || 'bg';
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setLanguage(currentLang);
-  document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
-  document.getElementById("lang-bg").addEventListener("click", () => setLanguage("bg"));
+// Set current language
+function setCurrentLanguage(lang) {
+  localStorage.setItem('zala-lang', lang);
+  return lang;
+}
+
+// Main function to set language and update UI
+function setLanguage(lang) {
+  const currentLang = setCurrentLanguage(lang);
+  document.documentElement.lang = currentLang;
+  const t = translations[currentLang];
+
+  console.log('Setting language to:', currentLang); // Debug log
+
+  // Update navbar text
+  const navHome = document.getElementById('nav-home');
+  const navRenovation = document.getElementById('nav-renovation');
+  const navQuotes = document.getElementById('nav-quotes');
+  const navStories = document.getElementById('nav-stories');
+  const navLogin = document.getElementById('nav-login');
+  const navSignup = document.getElementById('nav-signup');
+  
+  if (navHome) navHome.textContent = t['nav.home'];
+  if (navRenovation) navRenovation.textContent = t['nav.renovation'];
+  if (navQuotes) navQuotes.textContent = t['nav.quotes'];
+  if (navStories) navStories.textContent = t['nav.stories'];
+  if (navLogin) navLogin.textContent = t['nav.login'];
+  if (navSignup) navSignup.textContent = t['nav.signup'];
+
+  // Update footer
+  const footerText = document.getElementById('footer-text');
+  if (footerText) footerText.textContent = t['footer.text'];
+
+  // Update hero section (home page only)
+  const heroTitle = document.getElementById('hero-title');
+  const heroTagline = document.getElementById('hero-tagline');
+  if (heroTitle) heroTitle.textContent = t['hero.title'];
+  if (heroTagline) heroTagline.textContent = t['hero.tagline'];
+
+  // Update page-specific content
+const bodyClass = document.body.classList;
+const pageTitle = document.getElementById('page-title');
+const pageText = document.getElementById('page-text');
+
+if (bodyClass.contains('renovation') && pageTitle) {
+  pageTitle.textContent = t['page.renovation.title'];
+  if (pageText) pageText.textContent = t['page.renovation.text'];
+}
+if (bodyClass.contains('quotes') && pageTitle) {
+  pageTitle.textContent = t['page.quotes.title'];
+  // Trigger quotes rendering when language changes
+  if (window.renderQuotes) {
+    setTimeout(() => {
+      window.renderQuotes(lang);
+    }, 100);
+  }
+}
+if (bodyClass.contains('stories') && pageTitle) {
+  pageTitle.textContent = t['page.stories.title'];
+}
+
+  // Update language toggle active states
+  const langEn = document.getElementById('lang-en');
+  const langBg = document.getElementById('lang-bg');
+  if (langEn) langEn.classList.toggle('active', currentLang === 'en');
+  if (langBg) langBg.classList.toggle('active', currentLang === 'bg');
+
+  console.log('Language update complete'); // Debug log
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, initializing language...'); // Debug log
+  
+  // Set initial language
+  const initialLang = getCurrentLanguage();
+  setLanguage(initialLang);
+  
+  // Add language toggle event listeners
+  const langEn = document.getElementById('lang-en');
+  const langBg = document.getElementById('lang-bg');
+  
+  if (langEn) {
+    langEn.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('English button clicked'); // Debug log
+      setLanguage('en');
+    });
+  }
+  
+  if (langBg) {
+    langBg.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('Bulgarian button clicked'); // Debug log
+      setLanguage('bg');
+    });
+  }
+  
+  console.log('Language system initialized'); // Debug log
 });
+
+// Make setLanguage available globally for other scripts
+window.setLanguage = setLanguage;
+window.getCurrentLanguage = getCurrentLanguage;

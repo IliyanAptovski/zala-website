@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zala | Renovation</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/main.js"></script>
 </head>
 <body class="renovation">
   <header class="navbar">
@@ -16,6 +15,10 @@
         <li><a href="renovation.html" id="nav-renovation" class="active">Renovation</a></li>
         <li><a href="quotes.html" id="nav-quotes">Quotes</a></li>
         <li><a href="stories.html" id="nav-stories">Scary Stories</a></li>
+        <li><a href="login.html" id="nav-login">Login</a></li>
+        <li><a href="signup.html" id="nav-signup">Sign Up</a></li>
+        <li id="nav-user-greeting" style="display:none;">Hello, <span id="nav-user-name"></span>!</li>
+        <li><button id="nav-logout-btn" style="display:none;">Logout</button></li>
       </ul>
     </nav>
     <div class="lang-toggle">
@@ -32,5 +35,7 @@
   <footer>
     <p id="footer-text">© Зала 2025</p>
   </footer>
+  <script type="module" src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/navbar.js"></script>
 </body>
 </html>
