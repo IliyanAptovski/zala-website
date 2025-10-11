@@ -1,0 +1,195 @@
+/* Fullscreen energy overlay */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #00ff88 0%, #003322 40%, #000 100%);
+  box-shadow: 0 0 40px #00ff88;
+  z-index: 99999;
+  pointer-events: none;
+  transform: skewX(-20deg);
+  opacity: 0;
+}
+
+/* Sweep motion */
+.page-transition.active {
+  opacity: 1;
+  animation: energySweep 1.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes energySweep {
+  0% {
+    left: -100%;
+    opacity: 0.9;
+    filter: brightness(3);
+  }
+  40% {
+    left: 10%;
+    opacity: 1;
+    filter: brightness(2);
+  }
+  60% {
+    left: 50%;
+    filter: brightness(1.6);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    filter: brightness(1);
+  }
+}
+
+/* === CONTENT REVEAL === */
+
+/* Hide ALL content initially */
+main.content > *,
+.hero,
+.hero > *,
+.story-card,
+.story-card > *,
+#quotes-container,
+#quotes-container > *,
+.auth-container,
+.auth-container > *,
+.auth-form,
+.auth-form > *,
+.navbar,
+footer {
+  opacity: 0;
+}
+
+/* Reveal ALL content with the energy sweep */
+body.page-load main.content > *,
+body.page-load .hero,
+body.page-load .hero > *,
+body.page-load .story-card,
+body.page-load .story-card > *,
+body.page-load #quotes-container,
+body.page-load #quotes-container > *,
+body.page-load .auth-container,
+body.page-load .auth-container > *,
+body.page-load .auth-form,
+body.page-load .auth-form > *,
+body.page-load .navbar,
+body.page-load footer {
+  animation: contentReveal 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes contentReveal {
+  0% {
+    opacity: 0;
+    filter: brightness(0.3) blur(5px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(0.8) blur(2px);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) blur(0);
+  }
+}
+
+/* Stagger the content reveal */
+body.page-load .navbar {
+  animation-delay: 0.2s;
+}
+
+/* Page titles and main headings appear first */
+body.page-load #page-title,
+body.page-load #hero-title,
+body.page-load h1,
+body.page-load .glow {
+  animation-delay: 0.3s;
+}
+
+/* Main content areas and auth subtitles */
+body.page-load main.content > *:not(h1),
+body.page-load .hero > *:not(h1),
+body.page-load #page-text,
+body.page-load .tagline,
+body.page-load .subtitle {
+  animation-delay: 0.4s;
+}
+
+/* Forms and interactive elements */
+body.page-load .auth-form,
+body.page-load .auth-form > *,
+body.page-load .story-card,
+body.page-load .story-card > *,
+body.page-load #quotes-container,
+body.page-load #quotes-container > *,
+body.page-load .quote-card {
+  animation-delay: 0.5s;
+}
+
+/* Form buttons and dividers */
+body.page-load .neon-btn,
+body.page-load .google-btn,
+body.page-load .divider,
+body.page-load .redirect {
+  animation-delay: 0.6s;
+}
+
+/* Footer appears last */
+body.page-load footer {
+  animation-delay: 0.7s;
+}
+
+/* Transition out - fade ALL content smoothly */
+body.transitioning main.content > *,
+body.transitioning .hero,
+body.transitioning .hero > *,
+body.transitioning .story-card,
+body.transitioning .story-card > *,
+body.transitioning #quotes-container,
+body.transitioning #quotes-container > *,
+body.transitioning .auth-container,
+body.transitioning .auth-container > *,
+body.transitioning .auth-form,
+body.transitioning .auth-form > *,
+body.transitioning .navbar,
+body.transitioning footer {
+  animation: contentFadeOut 0.5s ease-in forwards !important;
+}
+
+@keyframes contentFadeOut {
+  0% {
+    opacity: 1;
+    filter: brightness(1) blur(0);
+  }
+  100% {
+    opacity: 0;
+    filter: brightness(0.5) blur(3px);
+  }
+}
+
+/* Hover effects */
+.navbar a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+/* Remove the old fade-in class */
+.auth-container.fade-in {
+  animation: none;
+}
