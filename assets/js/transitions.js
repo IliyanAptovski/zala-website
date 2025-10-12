@@ -1,4 +1,4 @@
-// ===== ZALA COMPREHENSIVE TRANSITIONS =====
+// ===== TRANSITIONS =====
 class PageTransitions {
   constructor() {
     this.init();
