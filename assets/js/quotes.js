@@ -1,6 +1,54 @@
 const quotes = [
   {
     en: {
+      text: "Go up downstairs.",
+      author: "Sevdi's father",
+      date: "2018",
+    },
+    bg: {
+      text: "Слезни нагоре по стълбите.",
+      author: "На Севди баща му",
+      date: "2018",
+    },
+  },
+  {
+    en: {
+      text: "The hole isn't there — if you can see it.",
+      author: "Denis",
+      date: "2019",
+    },
+    bg: {
+      text: "Там дупката я няма ако я виждаш.",
+      author: "Денис",
+      date: "2019",
+    },
+  },
+  {
+    en: {
+      text: "America is a big city.",
+      author: "Denis",
+      date: "2019",
+    },
+    bg: {
+      text: "Америка е голям град.",
+      author: "Денис",
+      date: "2019",
+    },
+  },
+  {
+    en: {
+      text: "It's a whole different thing, breathing through a pipe.",
+      author: "Denis upon seeing someone smoking",
+      date: "2019",
+    },
+    bg: {
+      text: "Дручко си е да дишаш през тръба.",
+      author: "Денис ага видя някой да пуши",
+      date: "2019",
+    },
+  },
+  {
+    en: {
       text: "I wonder when auzubilaha will come.",
       author: "Denis",
       date: "2019",
@@ -649,7 +697,7 @@ const quotes = [
   },
   {
     en: {
-      text: "Mitsubishi 4x4.",
+      text: "Mitsubishi by 4 by 4.",
       author: "Dani",
       date: "2024",
     },
@@ -776,6 +824,30 @@ const quotes = [
     bg: {
       text: "Уличните трябва да светят цял ден!",
       author: "Джесика",
+      date: "2025",
+    },
+  },
+  {
+    en: {
+      text: "Sevdi: “Wow, that guy's not right in the head — he drinks every day.” Dani: “Wow, he's crazy.”",
+      author: "Sevdi & Dani",
+      date: "2025",
+    },
+    bg: {
+      text: "Севди: “Вай тоя не е добре с акъла и пие всеки ден.” Дани: “Вай че е луд.”",
+      author: "Севди и Дани",
+      date: "2025",
+    },
+  },
+  {
+    en: {
+      text: "When it’s sharp, it doesn’t cut.",
+      author: "Selvi",
+      date: "2025",
+    },
+    bg: {
+      text: "То ага е остър не реже.",
+      author: "Селви",
       date: "2025",
     },
   }
