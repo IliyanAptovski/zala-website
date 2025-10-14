@@ -13,7 +13,52 @@ const translations = {
     // Home page
     'hero.title': 'Welcome to The Zala',
     'hero.tagline': '“If you don\'t give it to us, we\'ll take it ourselves!”',
+
+    // News Section
+    'news.title': 'Updates from the Zala',
+    'news.renovationUpdate': 'Renovation Progress', 
+    'news.renovationText': ' Completed the ceiling in the weightlifting room and installed a new window, improving visuals and structure. Began and finished the wall next to the entrance in the table tennis room.',
+    'news.newQuotes': 'New Quotes Added',
+    'news.quotesText': 'Six new quotes added.',
+    'news.date': 'October 2025',
     
+    // Staff Section
+    'staff.title': 'Staff',
+
+    // The Transformer Keeper
+    'staff.theTransformerKeeper.name': 'The Transformer Keeper',
+    'staff.theTransformerKeeper.role': 'Head of Maintenance',
+    'staff.theTransformerKeeper.bio': 'Keeps the lights flickering — and the voices clear.',
+    'staff.theTransformerKeeper.quote': '"The lights flicker… but I never forget."',
+    'staff.theTransformerKeeper.alt': 'The Transformer Keeper portrait',
+
+    // Denis
+    'staff.denis.name': 'Denis',
+    'staff.denis.role': 'Quote Collector',
+    'staff.denis.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.denis.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.denis.alt': 'Denis portrait',
+
+    // Sevgin
+    'staff.sevgin.name': 'Denis',
+    'staff.sevgin.role': 'Quote Collector',
+    'staff.sevgin.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.sevgin.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.sevgin.alt': 'Sevgin portrait',
+
+    // Iliyan
+    'staff.iliyan.name': 'Denis',
+    'staff.iliyan.role': 'Quote Collector',
+    'staff.iliyan.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.iliyan.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.iliyan.alt': 'Denis portrait',
+
+    // Support Section
+    'support.title': 'Support & Connection',
+    'support.text': 'Support the Zala and help us uncover forgotten memories.',
+    'support.donateButton': 'Donate',
+    'support.shareButton': 'Contact Us',
+
     // Page titles and content
     'page.renovation.title': 'The Evolution of the Zala',
     'page.renovation.text': 'Follow our transformation through time.',
@@ -53,6 +98,51 @@ const translations = {
     // Home page
     'hero.title': 'Добре дошли в Залата',
     'hero.tagline': '„Ако не ни го дадеш, ще си го вземем сами!“',
+
+    // News Section
+    'news.title': 'Актуално от Залата',
+    'news.renovationUpdate': 'Напредък по ремонта', 
+    'news.renovationText': 'Завършен е таванът в залата за вдигане на тежести и е поставен нов прозорец, подобрявайки визията и конструкцията. Започната и завършена е стената до входа в залата за тенис на маса.',
+    'news.newQuotes': 'Добавени цитати',
+    'news.quotesText': 'Добавени са шест нови цитата.',
+    'news.date': 'Октомври 2025',
+    
+    // Staff Section
+    'staff.title': 'Staff',
+
+    // The Transformer Keeper
+    'staff.theTransformerKeeper.name': 'Поддръжката на трансформатора',
+    'staff.theTransformerKeeper.role': 'Началник поддръжка',
+    'staff.theTransformerKeeper.bio': 'Поддържа светлините трептящи — и гласовете ясни.',
+    'staff.theTransformerKeeper.quote': '"Светлините примигват… но аз никога не забравям."',
+    'staff.theTransformerKeeper.alt': 'The Transformer Keeper portrait',
+
+    // Denis
+    'staff.denis.name': 'Denis',
+    'staff.denis.role': 'Quote Collector',
+    'staff.denis.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.denis.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.denis.alt': 'Denis portrait',
+
+    // Sevgin
+    'staff.sevgin.name': 'Denis',
+    'staff.sevgin.role': 'Quote Collector',
+    'staff.sevgin.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.sevgin.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.sevgin.alt': 'Sevgin portrait',
+
+    // Iliyan
+    'staff.iliyan.name': 'Denis',
+    'staff.iliyan.role': 'Quote Collector',
+    'staff.iliyan.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.iliyan.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.iliyan.alt': 'Denis portrait',
+
+    // Support Section
+    'support.title': 'Подкрепа и Връзка',
+    'support.text': 'Подкрепете Залата и ни помогнете да открием забравените спомени.',
+    'support.donateButton': 'Дарение',
+    'support.shareButton': 'Свържете се с нас',
     
     // Page titles and content
     'page.renovation.title': 'Ремонт на Залата',
