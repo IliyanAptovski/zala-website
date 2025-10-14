@@ -161,6 +161,207 @@ footer {
   transform: scale(1.05);
 }
 
+/* News Section */
+.news-section, .staff-section, .support-section {
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.news-card {
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+}
+
+.news-date {
+  color: #00ff88;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Staff Section */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.staff-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 255, 136, 0.3);
+}
+
+.staff-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #00ff88;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.staff-role {
+  color: #00ff88;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.staff-card blockquote {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 255, 136, 0.1);
+  border-left: 3px solid #00ff88;
+  font-style: italic;
+}
+
+/* Support Section */
+.support-section {
+  text-align: center;
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+}
+
+.support-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Support Section Buttons */
+.support-options {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.support-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary Donate Button - Neon Green */
+.donate-btn {
+  background: linear-gradient(45deg, #00ff88, #00cc6a);
+  color: #000;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid #00ff88;
+}
+
+.donate-btn:hover {
+  background: linear-gradient(45deg, #00ffaa, #00ff88);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 136, 0.8),
+    0 0 40px rgba(0, 255, 136, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.05);
+  color: #000;
+}
+
+.donate-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Secondary Share Button - Dark with Neon Border */
+.share-btn {
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 136, 0.3),
+    inset 0 0 20px rgba(0, 255, 136, 0.1);
+  position: relative;
+}
+
+.share-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.share-btn:hover {
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 136, 0.5),
+    inset 0 0 30px rgba(0, 255, 136, 0.2);
+  transform: translateY(-3px);
+  color: #00ffaa;
+}
+
+.share-btn:hover::before {
+  left: 100%;
+}
+
+.share-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Button glow animation */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(0, 255, 136, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(0, 255, 136, 0.8),
+      0 0 40px rgba(0, 255, 136, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+.donate-btn {
+  animation: buttonPulse 3s ease-in-out infinite;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navbar ul {
@@ -173,6 +374,17 @@ footer {
   .navbar .logo img {
     height: 100%;
     max-height: 70px;
+  }
+
+  .support-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .support-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 1.2rem 2rem;
   }
 }
 

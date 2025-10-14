@@ -15,12 +15,12 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html" id="nav-home" class="active">Home</a></li>
-        <li><a href="renovation.html" id="nav-renovation">Renovation</a></li>
-        <li><a href="quotes.html" id="nav-quotes">Quotes</a></li>
-        <li><a href="stories.html" id="nav-stories">Scary Stories</a></li>
-        <li><a href="login.html" id="nav-login">Login</a></li>
-        <li><a href="signup.html" id="nav-signup">Sign Up</a></li>
+        <li><a href="index.html" id="nav-home" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="renovation.html" id="nav-renovation" data-i18n="nav.renovation">Renovation</a></li>
+        <li><a href="quotes.html" id="nav-quotes" data-i18n="nav.quotes">Quotes</a></li>
+        <li><a href="stories.html" id="nav-stories" data-i18n="nav.stories">Scary Stories</a></li>
+        <li><a href="login.html" id="nav-login" data-i18n="nav.login">Login</a></li>
+        <li><a href="signup.html" id="nav-signup" data-i18n="nav.signup">Sign Up</a></li>
         <li id="nav-user-greeting" style="display:none;">Hello, <span id="nav-user-name"></span>!</li>
         <li><button id="nav-logout-btn" style="display:none;">Logout</button></li>
       </ul>
@@ -32,17 +32,95 @@
   </header>
 
   <main class="content">
+    <!-- Hero Section -->
     <section class="hero">
-      <h1 id="hero-title">Добре дошли в Залата</h1>
-      <p id="hero-tagline" class="tagline">
+      <h1 id="hero-title" data-i18n="hero.title">Добре дошли в Залата</h1>
+      <p id="hero-tagline" class="tagline" data-i18n="hero.tagline">
         „Ако не ни го дадеш, ще си го вземем сами!“
       </p>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+      <h2 data-i18n="news.title">Updates from the Zala</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <h3 data-i18n="news.renovationUpdate">Renovation Progress</h3>
+          <p data-i18n="news.renovationText">
+            Completed the ceiling in the weightlifting room and installed a new window, improving visuals and structure. 
+            Began and finished the wall next to the entrance in the table tennis room.
+          </p>
+          <span class="news-date" data-i18n="news.date">October 2025</span>
+        </article>
+        <article class="news-card">
+          <h3 data-i18n="news.newQuotes">New Quotes Added</h3>
+          <p data-i18n="news.quotesText">Six new quotes added.</p>
+          <span class="news-date" data-i18n="news.date">October 2025</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section class="staff-section">
+      <h2 data-i18n="staff.title">Staff</h2>
+      <div class="staff-grid">
+        <!-- The Transformer Keeper -->
+        <div class="staff-card">
+          <img src="./assets/img/staff/theTransformerKeeper.jpg" alt="The Transformer Keeper" data-i18n-alt="staff.theTransformerKeeper.alt">
+          <h3 data-i18n="staff.theTransformerKeeper.name">The Transformer Keeper</h3>
+          <span class="staff-role" data-i18n="staff.theTransformerKeeper.role">Head of Maintenance</span>
+          <p data-i18n="staff.theTransformerKeeper.bio">Keeps the lights flickering — and the voices clear.</p>
+          <blockquote data-i18n="staff.theTransformerKeeper.quote">"The lights flicker… but I never forget."</blockquote>
+        </div>
+        
+        <!-- Denis -->
+         <!--
+        <div class="staff-card">
+          <img src="./assets/img/staff/denis.jpg" alt="Denis" data-i18n-alt="staff.denis.alt">
+          <h3 data-i18n="staff.denis.name">Denis</h3>
+          <span class="staff-role" data-i18n="staff.denis.role">Quote Collector</span>
+          <p data-i18n="staff.denis.bio">Keeper of the ancient words and modern mispronunciations.</p>
+          <blockquote data-i18n="staff.denis.quote">"Аузубуляха кога ли ще дойде."</blockquote>
+        </div>
+        -->
+        <!-- Sevgin -->
+         <!--
+        <div class="staff-card">
+          <img src="./assets/img/staff/sevgin.jpg" alt="Sevgin" data-i18n-alt="staff.sevgin.alt">
+          <h3 data-i18n="staff.sevgin.name">Sevgin</h3>
+          <span class="staff-role" data-i18n="staff.sevgin.role">Atmosphere Curator</span>
+          <p data-i18n="staff.sevgin.bio">Master of shadows and keeper of the cold that comes and goes.</p>
+          <blockquote data-i18n="staff.sevgin.quote">"Излезе студеното."</blockquote>
+        </div>
+        -->
+        <!-- Iliyan -->
+         <!--
+        <div class="staff-card">
+          <img src="./assets/img/staff/iliyan.jpg" alt="Iliyan" data-i18n-alt="staff.iliyan.alt">
+          <h3 data-i18n="staff.iliyan.name">Iliyan</h3>
+          <span class="staff-role" data-i18n="staff.iliyan.role">Story Weaver</span>
+          <p data-i18n="staff.iliyan.bio">Spinner of tales and guardian of the whispering walls.</p>
+          <blockquote data-i18n="staff.iliyan.quote">"Не мога да си държе ръкъть."</blockquote>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+      <h2 data-i18n="support.title">Support & Connection</h2>
+      <p data-i18n="support.text">Support the Zala and help us uncover forgotten memories.</p>
+      <div class="support-options">
+        <button class="support-btn donate-btn" data-i18n="support.donateButton">Donate</button>
+        <button class="support-btn share-btn" data-i18n="support.shareButton">Contact Us</button>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p id="footer-text">© Зала 2025</p>
+    <p id="footer-text" data-i18n="footer.text">© Зала 2025</p>
   </footer>
+  
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/navbar.js"></script>
   <script type="module" src="assets/js/transitions.js"></script>
