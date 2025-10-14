@@ -59,6 +59,23 @@ const translations = {
     'support.donateButton': 'Donate',
     'support.shareButton': 'Contact Us',
 
+    // Location Section
+    'nav.hours': 'OPEN 24/7',
+    'nav.location': 'Studena, Madan Municipality, Smolyan Province',
+
+    'location.title': 'Find Us',
+    'location.subtitle': 'We await you.',
+
+    'location.physical.title': 'Physical Space',
+    'location.physical.address': 'Town Hall, Studena, 1st floor',
+    'location.physical.city': 'Studena, Madan Municipality, Smolyan Province', 
+    'location.physical.description': 'Where everything began',
+
+    'location.digital.title': 'Digital Presence',
+    'location.digital.platform': 'Always available online',
+    'location.digital.access': 'Accessible from anywhere, anytime',
+    'location.digital.description': 'From the Town Hall to the Network — the Zala remains',
+
     // Page titles and content
     'page.renovation.title': 'The Evolution of the Zala',
     'page.renovation.text': 'Follow our transformation through time.',
@@ -108,7 +125,7 @@ const translations = {
     'news.date': 'Октомври 2025',
     
     // Staff Section
-    'staff.title': 'Staff',
+    'staff.title': 'Екип',
 
     // The Transformer Keeper
     'staff.theTransformerKeeper.name': 'Поддръжката на трансформатора',
@@ -143,6 +160,23 @@ const translations = {
     'support.text': 'Подкрепете Залата и ни помогнете да открием забравените спомени.',
     'support.donateButton': 'Дарение',
     'support.shareButton': 'Свържете се с нас',
+
+    // Location Section
+    'nav.hours': 'ОТВОРЕНО 24/7',
+    'nav.location': 'с. Студена, общ. Мадан, обл. Смолян',
+
+    'location.title': 'Намери ни',
+    'location.subtitle': 'Очакваме те.',
+
+    'location.physical.title': 'Адрес',
+    'location.physical.address': 'Кметство, с. Студена, 1-ви етаж',
+    'location.physical.city': 'с. Студена, обл. Мадан, общ. Смолян',
+    'location.physical.description': 'Там, където започна всичко',
+
+    'location.digital.title': 'Дигитално присъствие',
+    'location.digital.platform': 'Винаги достъпна онлайн',
+    'location.digital.access': 'Достъпна от всяко място, по всяко време',
+    'location.digital.description': 'От кметството до мрежата — Залата остава.',
     
     // Page titles and content
     'page.renovation.title': 'Ремонт на Залата',

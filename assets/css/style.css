@@ -22,102 +22,114 @@ body {
   flex-direction: column;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.8);
+  padding: 0.8rem 2rem;
+  background: rgba(0, 0, 0, 0.95);
   border-bottom: 1px solid var(--accent-color);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.navbar .logo img{
-  height: 50px;
+.navbar .logo img {
+  height: 45px;
   width: auto;
   display: block;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.navbar ul {
+/* Navbar info container for hours and location */
+.navbar-info {
   display: flex;
-  list-style: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.navbar-hours {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--accent-color);
+  white-space: nowrap;
+}
+
+.navbar-location {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+/* Language toggle with hours integration */
+.navbar-controls {
+  display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: var(--text-color);
-  transition: 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: var(--accent-color);
-  text-shadow: 0 0 8px var(--accent-color);
+.lang-toggle {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .lang-toggle button {
   background: transparent;
   border: none;
   color: var(--text-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  padding: 0.3rem;
+  border-radius: 4px;
 }
 
 .lang-toggle button.active,
 .lang-toggle button:hover {
   color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+  background: rgba(0, 255, 136, 0.1);
 }
 
-/* Content */
-main.content {
-  flex: 1;
-  padding: 2rem;
-  text-align: center;
+/* Navigation menu */
+.navbar nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: block;
+}
+
+.navbar a:hover,
+.navbar a.active {
   color: var(--accent-color);
-  text-shadow: 0 0 15px var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+  background: rgba(0, 255, 136, 0.1);
 }
 
-.hero .tagline {
-  margin-top: 1rem;
-  font-style: italic;
-  opacity: 0.8;
+/* Auth-specific navbar items */
+#nav-user-greeting,
+#nav-logout-btn {
+  display: none;
 }
 
-/* Quotes */
-#quotes-container {
-  display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.quote-card {
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid var(--accent-color);
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-/* --- Logged-in user wrapper --- */
 .nav-user-wrapper {
   display: flex;
   align-items: center;
@@ -135,7 +147,6 @@ footer {
   box-shadow: 0 0 10px var(--accent-color);
 }
 
-/* User greeting text */
 #nav-user-greeting {
   color: var(--accent-color);
   font-weight: bold;
@@ -143,7 +154,6 @@ footer {
   white-space: nowrap;
 }
 
-/* Logout button */
 #nav-logout-btn {
   background-color: var(--accent-color);
   color: #000;
@@ -161,8 +171,62 @@ footer {
   transform: scale(1.05);
 }
 
+/* ===== MAIN CONTENT AREAS ===== */
+main.content {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Auth pages specific styling */
+body.auth-page main.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+  padding: 1rem;
+}
+
+/* Hero section */
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 15px var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.hero .tagline {
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+
+/* Quotes */
+#quotes-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quote-card {
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
 /* News Section */
-.news-section, .staff-section, .support-section {
+.news-section, .staff-section, .support-section, .location-section {
   margin: 3rem auto;
   max-width: 1200px;
   padding: 0 2rem;
@@ -181,6 +245,7 @@ footer {
   border-radius: 8px;
   padding: 1.5rem;
   transition: all 0.3s ease;
+  text-align: left;
 }
 
 .news-card:hover {
@@ -192,6 +257,8 @@ footer {
   color: #00ff88;
   font-size: 0.9rem;
   opacity: 0.7;
+  display: block;
+  margin-top: 1rem;
 }
 
 /* Staff Section */
@@ -229,6 +296,7 @@ footer {
   color: #00ff88;
   font-style: italic;
   margin: 0.5rem 0;
+  display: block;
 }
 
 .staff-card blockquote {
@@ -237,6 +305,7 @@ footer {
   background: rgba(0, 255, 136, 0.1);
   border-left: 3px solid #00ff88;
   font-style: italic;
+  text-align: left;
 }
 
 /* Support Section */
@@ -249,15 +318,6 @@ footer {
   margin: 4rem auto;
 }
 
-.support-options {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-/* Support Section Buttons */
 .support-options {
   display: flex;
   gap: 1.5rem;
@@ -278,9 +338,10 @@ footer {
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
+  min-width: 160px;
 }
 
-/* Primary Donate Button - Neon Green */
+/* Donate Button - Neon Green */
 .donate-btn {
   background: linear-gradient(45deg, #00ff88, #00cc6a);
   color: #000;
@@ -304,7 +365,7 @@ footer {
   transform: translateY(-1px) scale(1.02);
 }
 
-/* Secondary Share Button - Dark with Neon Border */
+/* Share Button - Dark with Neon Border */
 .share-btn {
   background: rgba(0, 0, 0, 0.8);
   color: #00ff88;
@@ -362,18 +423,129 @@ footer {
   animation: buttonPulse 3s ease-in-out infinite;
 }
 
-/* Responsive */
+/* Location Section */
+.location-section {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 800px;
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+}
+
+.location-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.location-card {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.location-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+.location-card p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--accent-color);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: auto;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0.7rem 1.5rem;
+  }
+  
+  .navbar nav ul {
+    gap: 1rem;
+  }
+  
+  .navbar-controls {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.6rem 1rem;
     gap: 0.8rem;
   }
+  
+  .navbar .logo img {
+    height: 35px;
+  }
+  
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .navbar nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .navbar nav ul li {
+    flex: 1;
+    min-width: fit-content;
+    text-align: center;
+  }
+  
+  .navbar a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    display: block;
+  }
+  
+  .navbar-controls {
+    order: 2;
+    margin-left: auto;
+    gap: 0.8rem;
+  }
+  
+  .navbar-info {
+    align-items: flex-end;
+  }
+  
+  .navbar-hours {
+    font-size: 0.75rem;
+  }
+  
+  .navbar-location {
+    font-size: 0.7rem;
+  }
+  
+  .lang-toggle button {
+    font-size: 1rem;
+    padding: 0.2rem;
+  }
+
   main.content {
     padding: 1rem;
-  }
-  .navbar .logo img {
-    height: 100%;
-    max-height: 70px;
   }
 
   .support-options {
@@ -386,5 +558,58 @@ footer {
     max-width: 280px;
     padding: 1.2rem 2rem;
   }
+
+  .news-section, .staff-section, .support-section, .location-section {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .staff-grid,
+  .news-grid,
+  .location-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .navbar nav ul {
+    gap: 0.3rem;
+  }
+  
+  .navbar a {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar-controls {
+    gap: 0.5rem;
+  }
+  
+  .navbar-info {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .tagline {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile menu toggle for future hamburger menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
