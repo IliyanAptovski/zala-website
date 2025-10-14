@@ -16,18 +16,26 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="renovation.html" data-i18n="nav.renovation">Renovation</a></li>
-        <li><a href="quotes.html" data-i18n="nav.quotes">Quotes</a></li>
-        <li><a href="stories.html" data-i18n="nav.stories">Scary Stories</a></li>
-        <li><a href="login.html" class="active" data-i18n="nav.login">Login</a></li>
-        <li><a href="signup.html" data-i18n="nav.signup">Sign Up</a></li>
+        <li><a href="index.html" id="nav-home" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="renovation.html" id="nav-renovation" data-i18n="nav.renovation">Renovation</a></li>
+        <li><a href="quotes.html" id="nav-quotes" data-i18n="nav.quotes">Quotes</a></li>
+        <li><a href="stories.html" id="nav-stories" data-i18n="nav.stories">Scary Stories</a></li>
+        <li><a href="login.html" id="nav-login" data-i18n="nav.login">Login</a></li>
+        <li><a href="signup.html" id="nav-signup" data-i18n="nav.signup">Sign Up</a></li>
+        <li id="nav-user-greeting" style="display:none;">Hello, <span id="nav-user-name"></span>!</li>
+        <li><button id="nav-logout-btn" style="display:none;">Logout</button></li>
       </ul>
-    </nav>
-    <div class="lang-toggle">
-      <button id="lang-en" class="active">🇬🇧</button>
-      <button id="lang-bg">🇧🇬</button>
+  </nav>
+  <div class="navbar-controls">
+    <div class="navbar-info">
+      <div class="navbar-hours" data-i18n="nav.hours">OPEN 24/7</div>
+      <div class="navbar-location" data-i18n="nav.location">Studena, Madan Municipality, Smolyan Province</div>
     </div>
+    <div class="lang-toggle">
+      <button id="lang-en">🇬🇧</button>
+      <button id="lang-bg" class="active">🇧🇬</button>
+    </div>
+  </div>
   </header>
 
   <main class="auth-container fade-in">
