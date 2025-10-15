@@ -66,6 +66,39 @@
       </div>
     </section>
 
+    <!-- Song of the Week Section - HOME PAGE ONLY -->
+    <section class="song-section">
+      <h2 data-i18n="song.title">Song of the Week</h2>
+      
+      <div class="song-player">
+        <!-- Song name container above the player -->
+        <div class="song-name-wrapper">
+          <div class="song-name-container">
+            <h3 class="song-name" data-i18n="song.name">Sasho Roman - Of, of</h3>
+          </div>
+        </div>
+        
+        <!-- Player controls -->
+        <div class="audio-player">
+          <button class="audio-play-btn" id="audio-play-btn">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none;">❚❚</span>
+          </button>
+          <span class="song-time" id="song-time">0:00</span>
+        </div>
+        
+        <div class="now-playing" id="now-playing" style="display: none;">
+          <span data-i18n="song.playing">Now Playing</span>
+        </div>
+        
+        <audio id="song-audio">
+          <source src="./assets/audio/song-of-the-week.mp3" type="audio/mpeg">
+          <source src="./assets/audio/song-of-the-week.ogg" type="audio/ogg">
+          <p data-i18n="song.unsupported">Your browser does not support audio playback.</p>
+        </audio>
+      </div>
+    </section>
+
     <!-- Staff Section -->
     <section class="staff-section">
       <h2 data-i18n="staff.title">Staff</h2>
@@ -152,5 +185,6 @@
   <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/navbar.js"></script>
   <script type="module" src="assets/js/transitions.js"></script>
+  <script src="assets/js/home-audio.js"></script>
 </body>
 </html>
