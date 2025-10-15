@@ -14,6 +14,12 @@ const translations = {
     'hero.title': 'Welcome to The Zala',
     'hero.tagline': '“If you don\'t give it to us, we\'ll take it ourselves!”',
 
+    // Song Section
+    'song.title': 'Song of the Week',
+    'song.name': 'Sasho Roman - Of, of',
+    'song.playing': 'Now playing',
+    'song.unsupported': 'Your browser does not support audio playback.',
+
     // News Section
     'news.title': 'Updates from the Zala',
     'news.renovationUpdate': 'Renovation Progress', 
@@ -115,6 +121,12 @@ const translations = {
     // Home page
     'hero.title': 'Добре дошли в Залата',
     'hero.tagline': '„Ако не ни го дадеш, ще си го вземем сами!“',
+
+    // Song Section
+    'song.title': 'Песен на седмицата',
+    'song.name': 'Сашо Роман - Оф, оф',
+    'song.playing': 'В момента звучи',
+    'song.unsupported': 'Браузърът ви не поддържа аудио възпроизвеждане.',
 
     // News Section
     'news.title': 'Актуално от Залата',
