@@ -1,5 +1,4 @@
-/* ===== ZALA THEME ===== */
-
+/* ===== ZALA THEME - CORE STYLES ===== */
 :root {
   --bg-color: #000;
   --accent-color: #00ff88;
@@ -22,7 +21,7 @@ body {
   flex-direction: column;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVIGATION ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -44,7 +43,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Navbar info container for hours and location */
 .navbar-info {
   display: flex;
   flex-direction: column;
@@ -67,7 +65,6 @@ body {
   white-space: nowrap;
 }
 
-/* Language toggle with hours integration */
 .navbar-controls {
   display: flex;
   align-items: center;
@@ -97,7 +94,6 @@ body {
   background: rgba(0, 255, 136, 0.1);
 }
 
-/* Navigation menu */
 .navbar nav ul {
   display: flex;
   list-style: none;
@@ -124,7 +120,6 @@ body {
   background: rgba(0, 255, 136, 0.1);
 }
 
-/* Auth-specific navbar items */
 #nav-user-greeting,
 #nav-logout-btn {
   display: none;
@@ -171,14 +166,13 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== MAIN CONTENT AREAS ===== */
+/* ===== MAIN CONTENT LAYOUT ===== */
 main.content {
   flex: 1;
   padding: 2rem;
   text-align: center;
 }
 
-/* Auth pages specific styling */
 body.auth-page main.content {
   display: flex;
   flex-direction: column;
@@ -188,397 +182,7 @@ body.auth-page main.content {
   padding: 1rem;
 }
 
-/* Hero section */
-.hero h1 {
-  font-size: 2.5rem;
-  color: var(--accent-color);
-  text-shadow: 0 0 15px var(--accent-color);
-  margin-bottom: 1rem;
-}
-
-.hero .tagline {
-  font-style: italic;
-  opacity: 0.8;
-  font-size: 1.2rem;
-}
-
-/* ===== CONTENT SECTIONS ===== */
-
-/* Quotes */
-#quotes-container {
-  display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.quote-card {
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
-  transition: all 0.3s ease;
-}
-
-.quote-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-}
-
-/* Song section */
-.song-name-wrapper {
-  position: relative;
-  height: 40px;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid rgba(0, 255, 136, 0.3);
-  border-radius: 6px;
-  padding: 0.5rem 0;
-}
-
-.song-name-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.song-name {
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  text-shadow: 0 0 8px var(--accent-color);
-  white-space: nowrap;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  animation: slideMarquee 20s linear infinite;
-  padding: 0 2rem;
-}
-
-/* Animation only when playing */
-.song-player.playing .song-name {
-  animation: slideMarquee 20s linear infinite;
-}
-
-/* Static when not playing */
-.song-player:not(.playing) .song-name {
-  animation: none;
-  position: static;
-  justify-content: center;
-  text-align: center;
-}
-
-@keyframes slideMarquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Rest of your existing styles remain the same */
-.audio-player {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.audio-play-btn {
-  background: linear-gradient(45deg, #00ff88, #00cc6a);
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  color: #000;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.audio-play-btn:hover {
-  background: linear-gradient(45deg, #00ffaa, #00ff88);
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
-  transform: scale(1.1);
-}
-
-.audio-play-btn.playing {
-  background: linear-gradient(45deg, #ff4444, #cc0000);
-  box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
-}
-
-.song-time {
-  color: var(--accent-color);
-  font-family: var(--font-main);
-  font-size: 0.9rem;
-  min-width: 40px;
-  text-shadow: 0 0 5px var(--accent-color);
-}
-
-.now-playing {
-  color: var(--accent-color);
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  opacity: 0.8;
-  text-shadow: 0 0 5px var(--accent-color);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* News Section */
-.news-section, .staff-section, .support-section, .location-section {
-  margin: 3rem auto;
-  max-width: 1200px;
-  padding: 0 2rem;
-}
-
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.news-card {
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.news-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
-}
-
-.news-date {
-  color: #00ff88;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  display: block;
-  margin-top: 1rem;
-}
-
-/* Staff Section */
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.staff-card {
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid var(--accent-color);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.staff-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 255, 136, 0.3);
-}
-
-.staff-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 2px solid #00ff88;
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
-
-.staff-role {
-  color: #00ff88;
-  font-style: italic;
-  margin: 0.5rem 0;
-  display: block;
-}
-
-.staff-card blockquote {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: rgba(0, 255, 136, 0.1);
-  border-left: 3px solid #00ff88;
-  font-style: italic;
-  text-align: left;
-}
-
-/* Support Section */
-.support-section {
-  text-align: center;
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid var(--accent-color);
-  border-radius: 12px;
-  padding: 3rem 2rem;
-  margin: 4rem auto;
-}
-
-.support-options {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.support-btn {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-family: var(--font-main);
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  min-width: 160px;
-}
-
-/* Donate Button - Neon Green */
-.donate-btn {
-  background: linear-gradient(45deg, #00ff88, #00cc6a);
-  color: #000;
-  box-shadow: 
-    0 0 20px rgba(0, 255, 136, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 1px solid #00ff88;
-}
-
-.donate-btn:hover {
-  background: linear-gradient(45deg, #00ffaa, #00ff88);
-  box-shadow: 
-    0 0 30px rgba(0, 255, 136, 0.8),
-    0 0 40px rgba(0, 255, 136, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px) scale(1.05);
-  color: #000;
-}
-
-.donate-btn:active {
-  transform: translateY(-1px) scale(1.02);
-}
-
-/* Share Button - Dark with Neon Border */
-.share-btn {
-  background: rgba(0, 0, 0, 0.8);
-  color: #00ff88;
-  border: 2px solid #00ff88;
-  box-shadow: 
-    0 0 15px rgba(0, 255, 136, 0.3),
-    inset 0 0 20px rgba(0, 255, 136, 0.1);
-  position: relative;
-}
-
-.share-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
-  transition: left 0.6s ease;
-}
-
-.share-btn:hover {
-  background: rgba(0, 255, 136, 0.1);
-  box-shadow: 
-    0 0 25px rgba(0, 255, 136, 0.5),
-    inset 0 0 30px rgba(0, 255, 136, 0.2);
-  transform: translateY(-3px);
-  color: #00ffaa;
-}
-
-.share-btn:hover::before {
-  left: 100%;
-}
-
-.share-btn:active {
-  transform: translateY(-1px);
-}
-
-/* Button glow animation */
-@keyframes buttonPulse {
-  0%, 100% {
-    box-shadow: 
-      0 0 20px rgba(0, 255, 136, 0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    box-shadow: 
-      0 0 30px rgba(0, 255, 136, 0.8),
-      0 0 40px rgba(0, 255, 136, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  }
-}
-
-.donate-btn {
-  animation: buttonPulse 3s ease-in-out infinite;
-}
-
-/* Location Section */
-.location-section {
-  text-align: center;
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 800px;
-  background: rgba(0, 255, 136, 0.05);
-  border: 1px solid var(--accent-color);
-  border-radius: 12px;
-}
-
-.location-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
-  text-align: left;
-}
-
-.location-card {
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-  border: 1px solid rgba(0, 255, 136, 0.3);
-}
-
-.location-card h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px var(--accent-color);
-}
-
-.location-card p {
-  margin: 0.5rem 0;
-  line-height: 1.5;
-}
-
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -665,48 +269,6 @@ footer {
   main.content {
     padding: 1rem;
   }
-
-  .support-options {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .support-btn {
-    width: 100%;
-    max-width: 280px;
-    padding: 1.2rem 2rem;
-  }
-
-  .news-section, .staff-section, .support-section, .location-section {
-    padding: 0 1rem;
-    margin: 2rem auto;
-  }
-
-  .staff-grid,
-  .news-grid,
-  .location-info {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .song-name-wrapper {
-    height: 35px;
-    margin-bottom: 1rem;
-  }
-  
-  .song-name {
-    font-size: 1.1rem;
-  }
-  
-  .audio-player {
-    gap: 1rem;
-  }
-  
-  .audio-play-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -730,17 +292,8 @@ footer {
   .navbar-info {
     display: none;
   }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero .tagline {
-    font-size: 1rem;
-  }
 }
 
-/* Mobile menu toggle for future hamburger menu */
 .mobile-menu-toggle {
   display: none;
   background: none;

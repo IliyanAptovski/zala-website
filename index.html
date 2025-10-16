@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="./assets/img/fav_icon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/transitions.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body class="home">
   <header class="navbar">
@@ -70,31 +71,40 @@
     <section class="song-section">
       <h2 data-i18n="song.title">Song of the Week</h2>
       
-      <div class="song-player">
-        <!-- Song name container above the player -->
+      <div class="song-player loading">
+        <!-- Video Background -->
+        <div class="song-background">
+            <video id="background-video" autoplay muted loop playsinline>
+                <source src="./assets/videos/song-of-the-week/background-loop.mp4" type="video/mp4">
+                <source src="/assets/videos/background-loop.webm" type="video/webm">
+                <!-- Fallback image if video doesn't load -->
+                <img src="./assets/img/song-of-the-week/song_of_the_week_fallback_background.jpg" alt="Background">
+            </video>
+        </div>
+        
+        <!-- Dark overlay -->
+        <div class="song-overlay"></div>
+        
+        <!-- Player content -->
         <div class="song-name-wrapper">
-          <div class="song-name-container">
-            <h3 class="song-name" data-i18n="song.name">Sasho Roman - Of, of</h3>
-          </div>
+            <div class="song-name-container">
+                <div class="song-name" data-i18n="song.name">Sasho Roman - Of, of</div>
+            </div>
         </div>
         
-        <!-- Player controls -->
         <div class="audio-player">
-          <button class="audio-play-btn" id="audio-play-btn">
-            <span class="play-icon">▶</span>
-            <span class="pause-icon" style="display: none;">❚❚</span>
-          </button>
-          <span class="song-time" id="song-time">0:00</span>
+            <button id="audio-play-btn" class="audio-play-btn">
+                <span class="play-icon">▶</span>
+                <span class="pause-icon" style="display: none;">❚❚</span>
+            </button>
+            <div id="song-time" class="song-time">0:00</div>
         </div>
         
-        <div class="now-playing" id="now-playing" style="display: none;">
-          <span data-i18n="song.playing">Now Playing</span>
-        </div>
+        <div id="now-playing" class="now-playing" data-i18n="song.playing" style="display: none;">NOW PLAYING</div>
         
-        <audio id="song-audio">
-          <source src="./assets/audio/song-of-the-week.mp3" type="audio/mpeg">
-          <source src="./assets/audio/song-of-the-week.ogg" type="audio/ogg">
-          <p data-i18n="song.unsupported">Your browser does not support audio playback.</p>
+        <audio id="song-audio" preload="metadata">
+            <source src="./assets/audio/song-of-the-week.mp3" type="audio/mpeg">
+            <source src="./assets/audio/song-of-the-week.ogg" type="audio/ogg">
         </audio>
       </div>
     </section>
