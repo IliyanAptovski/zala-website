@@ -19,6 +19,7 @@ const translations = {
     'song.name': 'Sasho Roman - Of, of',
     'song.playing': 'Now playing',
     'song.unsupported': 'Your browser does not support audio playback.',
+    'song.backgroundAlt': 'Song of the week background',
 
     // News Section
     'news.title': 'Updates from the Zala',
@@ -127,6 +128,7 @@ const translations = {
     'song.name': 'Сашо Роман - Оф, оф',
     'song.playing': 'В момента звучи',
     'song.unsupported': 'Браузърът ви не поддържа аудио възпроизвеждане.',
+    'song.backgroundAlt': 'Фон за песен на седмицата',
 
     // News Section
     'news.title': 'Актуално от Залата',

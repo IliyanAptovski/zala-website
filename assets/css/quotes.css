@@ -1,0 +1,20 @@
+/* ===== QUOTES PAGE STYLES ===== */
+#quotes-container {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quote-card {
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
