@@ -41,24 +41,38 @@ const translations = {
 
     // Denis
     'staff.denis.name': 'Denis',
-    'staff.denis.role': 'Quote Collector',
-    'staff.denis.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.denis.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.denis.role': 'Breaks it and fixes it',
+    'staff.denis.bio': 'Things always work out when I get fed up and just say “screw it.”',
+    'staff.denis.quote': '"Whatever I touch ends up satisfied."',
     'staff.denis.alt': 'Denis portrait',
 
     // Sevgin
-    'staff.sevgin.name': 'Denis',
+    'staff.sevgin.name': 'Sevgin',
     'staff.sevgin.role': 'Quote Collector',
     'staff.sevgin.bio': 'Keeper of the ancient words and modern mispronunciations.',
     'staff.sevgin.quote': '"Аузубуляха кога ли ще дойде."',
     'staff.sevgin.alt': 'Sevgin portrait',
 
     // Iliyan
-    'staff.iliyan.name': 'Denis',
-    'staff.iliyan.role': 'Quote Collector',
-    'staff.iliyan.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.iliyan.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.iliyan.name': 'Iliyan',
+    'staff.iliyan.role': 'Website and community maintenance',
+    'staff.iliyan.bio': 'Hanged twice, buried once.',
+    'staff.iliyan.quote': '"Rope for hanging with free installation."',
     'staff.iliyan.alt': 'Denis portrait',
+
+    // Sevdi
+    'staff.sevdi.name': 'Sevdi',
+    'staff.sevdi.role': 'Master of Absence',
+    'staff.sevdi.bio': 'Delesanhills member.',
+    'staff.sevdi.quote': '"Where there’s work, I’ve got no business being there."',
+    'staff.sevdi.alt': 'Sevdi portrait',
+
+    // Selvi
+    'staff.selvi.name': 'Selvi',
+    'staff.selvi.role': 'Quote Collector',
+    'staff.selvi.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.selvi.alt': 'Selvi portrait',
 
     // Support Section
     'support.title': 'Support & Connection',
@@ -149,25 +163,39 @@ const translations = {
     'staff.theTransformerKeeper.alt': 'The Transformer Keeper portrait',
 
     // Denis
-    'staff.denis.name': 'Denis',
-    'staff.denis.role': 'Quote Collector',
-    'staff.denis.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.denis.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.denis.name': 'Денис',
+    'staff.denis.role': 'Чупи и оправя',
+    'staff.denis.bio': 'Нещата винаги стават като ми писне и му еба майката.',
+    'staff.denis.quote': '"Каквото пипне остава доволно."',
     'staff.denis.alt': 'Denis portrait',
 
     // Sevgin
-    'staff.sevgin.name': 'Denis',
+    'staff.sevgin.name': 'Севгин',
     'staff.sevgin.role': 'Quote Collector',
     'staff.sevgin.bio': 'Keeper of the ancient words and modern mispronunciations.',
     'staff.sevgin.quote': '"Аузубуляха кога ли ще дойде."',
     'staff.sevgin.alt': 'Sevgin portrait',
 
     // Iliyan
-    'staff.iliyan.name': 'Denis',
-    'staff.iliyan.role': 'Quote Collector',
-    'staff.iliyan.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.iliyan.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.iliyan.name': 'Илиян',
+    'staff.iliyan.role': 'Поддръжка на сайта и общак',
+    'staff.iliyan.bio': 'Два пъти обесен, веднъж заровен.',
+    'staff.iliyan.quote': '"Въже за бесене с безплатен монтаж."',
     'staff.iliyan.alt': 'Denis portrait',
+
+    // Sevdi
+    'staff.sevdi.name': 'Севди',
+    'staff.sevdi.role': 'Владетелят на отсъствието',
+    'staff.sevdi.bio': 'Делесанхийлс мембър.',
+    'staff.sevdi.quote': '"Там дето има работа аз нямам работа."',
+    'staff.sevdi.alt': 'Sevdi portrait',
+
+    // Selvi
+    'staff.selvi.name': 'Селви',
+    'staff.selvi.role': 'Quote Collector',
+    'staff.selvi.bio': 'Keeper of the ancient words and modern mispronunciations.',
+    'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.selvi.alt': 'Selvi portrait',
 
     // Support Section
     'support.title': 'Подкрепа и Връзка',
