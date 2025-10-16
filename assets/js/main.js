@@ -74,6 +74,13 @@ const translations = {
     'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
     'staff.selvi.alt': 'Selvi portrait',
 
+    // Dani
+    'staff.dani.name': 'Dani',
+    'staff.dani.role': 'The Craftsman',
+    'staff.dani.bio': 'If something blows up, it’s either a storm — or I’m fixing the cables.',
+    'staff.dani.quote': '"Can or can’t — just make it work somehow."',
+    'staff.dani.alt': 'Dani portrait',
+
     // Support Section
     'support.title': 'Support & Connection',
     'support.text': 'Support the Zala and help us uncover forgotten memories.',
@@ -196,6 +203,12 @@ const translations = {
     'staff.selvi.bio': 'Keeper of the ancient words and modern mispronunciations.',
     'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
     'staff.selvi.alt': 'Selvi portrait',
+
+    'staff.dani.name': 'Дани',
+    'staff.dani.role': 'Майстора',
+    'staff.dani.bio': 'Ако гръмне нещо, или е буря, или аз оправям кабелите.',
+    'staff.dani.quote': '"Може, не може прави го някак."',
+    'staff.dani.alt': 'Dani portrait',
 
     // Support Section
     'support.title': 'Подкрепа и Връзка',
