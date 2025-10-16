@@ -48,9 +48,9 @@ const translations = {
 
     // Sevgin
     'staff.sevgin.name': 'Sevgin',
-    'staff.sevgin.role': 'Quote Collector',
-    'staff.sevgin.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.sevgin.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.sevgin.role': 'Doctor of Chemistry',
+    'staff.sevgin.bio': 'The strongest one in the Zala.',
+    'staff.sevgin.quote': '"Whoever I strike first feels the end… no drama, just facts."',
     'staff.sevgin.alt': 'Sevgin portrait',
 
     // Iliyan
@@ -178,9 +178,9 @@ const translations = {
 
     // Sevgin
     'staff.sevgin.name': 'Севгин',
-    'staff.sevgin.role': 'Quote Collector',
-    'staff.sevgin.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.sevgin.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.sevgin.role': 'Доктор по химия',
+    'staff.sevgin.bio': 'Най-мощният в залата.',
+    'staff.sevgin.quote': '"Който ударя пръв той усеща края… без драма, просто факт."',
     'staff.sevgin.alt': 'Sevgin portrait',
 
     // Iliyan
