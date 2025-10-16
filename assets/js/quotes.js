@@ -850,6 +850,18 @@ const quotes = [
       author: "Селви",
       date: "2025",
     },
+  },
+  {
+    en: {
+      text: "I’ve downed three Somersbys and they’re telling me to show a pass.",
+      author: "Denis",
+      date: "2025",
+    },
+    bg: {
+      text: "Опенал съм три съмърсбита, те ше ми вика дай пропуск.",
+      author: "Денис",
+      date: "2025",
+    },
   }
 ];
 
