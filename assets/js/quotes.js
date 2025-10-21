@@ -862,6 +862,42 @@ const quotes = [
       author: "Денис",
       date: "2025",
     },
+  },
+  {
+    en: {
+      text: "I plan to produce massive amounts of manure.",
+      author: "Veli",
+      date: "2025",
+    },
+    bg: {
+      text: "Възнамерявам да произвеждам огромни количества гибре.",
+      author: "Вели",
+      date: "2025",
+    },
+  },
+  {
+    en: {
+      text: "Rain’s gonna get into the stove.",
+      author: "Dani",
+      date: "2025",
+    },
+    bg: {
+      text: "Ще влезе дъжд в печката.",
+      author: "Дани",
+      date: "2025",
+    },
+  },
+  {
+    en: {
+      text: "You grab 20 sacks of potatoes from Madan, peel them, and cram them into the fridge.",
+      author: "Sevdi",
+      date: "2025",
+    },
+    bg: {
+      text: "Взимаш 20 чувала компир от Мадан, белиш ги и ги слагаш в хладилника.",
+      author: "Севди",
+      date: "2025",
+    },
   }
 ];
 

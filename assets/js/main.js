@@ -81,6 +81,13 @@ const translations = {
     'staff.dani.quote': '"Can or can’t — just make it work somehow."',
     'staff.dani.alt': 'Dani portrait',
 
+    // Veli
+    'staff.veli.name': 'Veli',
+    'staff.veli.role': 'The American Wire Guy',
+    'staff.veli.bio': 'Comes over from America every now and then during the summer.',
+    'staff.veli.quote': '"I plan to produce massive amounts of manure."',
+    'staff.veli.alt': 'Veli portrait',
+
     // Support Section
     'support.title': 'Support & Connection',
     'support.text': 'Support the Zala and help us uncover forgotten memories.',
@@ -204,11 +211,20 @@ const translations = {
     'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
     'staff.selvi.alt': 'Selvi portrait',
 
+
+    // Dani
     'staff.dani.name': 'Дани',
     'staff.dani.role': 'Майстора',
     'staff.dani.bio': 'Ако гръмне нещо, или е буря, или аз оправям кабелите.',
     'staff.dani.quote': '"Може, не може прави го някак."',
     'staff.dani.alt': 'Dani portrait',
+
+    // Veli
+    'staff.veli.name': 'Вели',
+    'staff.veli.role': 'Американския Жичкажия',
+    'staff.veli.bio': 'Дохада от Америка чат пат летоска.',
+    'staff.veli.quote': '"Възнамерявам да произвеждам огромни количества гибре."',
+    'staff.veli.alt': 'Veli portrait',
 
     // Support Section
     'support.title': 'Подкрепа и Връзка',
