@@ -8,7 +8,7 @@ const translations = {
     'nav.login': 'Login',
     'nav.signup': 'Sign Up',
     'nav.logout': 'Logout',
-    'nav.greeting': 'Hello, {name}!',
+    'nav.greeting': 'Hello',
     
     // Home page
     'hero.title': 'Welcome to The Zala',
@@ -120,6 +120,54 @@ const translations = {
     // Footer
     'footer.text': '© Zala 2025',
     
+    // Record Page
+    'records.title': 'Hall of Records',
+    'records.subtitle': 'Celebrating extraordinary achievements and milestones',
+    'records.places.title': 'Top 3 Places',
+    'records.places.first': '1st Place',
+    'records.places.second': '2nd Place',
+    'records.places.third': '3rd Place',
+        
+     // Record 1
+    'records.person1.name': 'Ivan Ivanov',
+    'records.record1.name': 'Record for the Dumbest Choice',
+    'records.record1.description': 'Achieved the fastest time in Zala history',
+    'records.person1.alt': 'Photo of Ivan Ivanov',
+    'records.record1.alt': 'Speed record illustration',
+    'records.record1.place1': 'Ivan Ivanov - 12.5 sec',
+    'records.record1.place2': 'Peter Georgiev - 13.2 sec',
+    'records.record1.place3': 'Maria Ilieva - 13.8 sec',
+        
+    // Record 2
+    'records.person2.name': 'Maria Petrova',
+    'records.record2.name': 'Strongest Result',
+    'records.record2.description': 'Record for physical strength and endurance',
+    'records.person2.alt': 'Photo of Maria Petrova',
+    'records.record2.alt': 'Strength record illustration',
+    'records.record2.place1': 'Maria Petrova - 150 kg',
+    'records.record2.place2': 'Georgi Dimitrov - 145 kg',
+    'records.record2.place3': 'Anna Stoyanova - 140 kg',
+        
+    // Record 3
+    'records.person3.name': 'Georgi Dimitrov',
+    'records.record3.name': 'Most Creative Solution',
+    'records.record3.description': 'Extraordinarily creative achievement',
+    'records.person3.alt': 'Photo of Georgi Dimitrov',
+    'records.record3.alt': 'Creative record illustration',
+    'records.record3.place1': 'Georgi Dimitrov - Innovative Project',
+    'records.record3.place2': 'Elena Markova - Creative Design',
+    'records.record3.place3': 'Stefan Ivanov - Unique Solution',
+        
+    // Record 4
+    'records.person4.name': 'Anna Stoyanova',
+    'records.record4.name': 'Longest Marathon',
+    'records.record4.description': 'Record for duration and endurance',
+    'records.person4.alt': 'Photo of Anna Stoyanova',
+    'records.record4.alt': 'Marathon record illustration',
+    'records.record4.place1': 'Anna Stoyanova - 8 hours 15 min',
+    'records.record4.place2': 'Dimitar Petrov - 7 hours 45 min',
+    'records.record4.place3': 'Sofia Georgieva - 7 hours 20 min',
+
     // Auth pages
     'auth.welcomeBack': 'Welcome Back',
     'auth.enterDark': 'We\'ve been waiting for you.',
@@ -145,7 +193,7 @@ const translations = {
     'nav.login': 'Вход',
     'nav.signup': 'Регистрация',
     'nav.logout': 'Изход',
-    'nav.greeting': 'Здравей, {name}!',
+    'nav.greeting': 'Здравей',
     
     // Home page
     'hero.title': 'Добре дошли в Залата',
@@ -258,6 +306,54 @@ const translations = {
     // Footer
     'footer.text': '© Зала 2025',
     
+    // Record Page
+    'records.title': 'Зала на славата',
+    'records.subtitle': 'Отбелязваме изключителни постижения и рекорди',
+    'records.places.title': 'Топ 3 места',
+    'records.places.first': '1-во място',
+    'records.places.second': '2-ро място', 
+    'records.places.third': '3-то място',
+        
+    // Record 1
+    'records.person1.name': 'Иван Иванов',
+    'records.record1.name': 'Най-бързо време',
+    'records.record1.description': 'Постигнато най-бързо време в историята на Залата',
+    'records.person1.alt': 'Снимка на Иван Иванов',
+    'records.record1.alt': 'Илюстрация на рекорд за скорост',
+    'records.record1.place1': 'Иван Иванов - 12.5 сек',
+    'records.record1.place2': 'Петър Георгиев - 13.2 сек',
+    'records.record1.place3': 'Мария Илиева - 13.8 сек',
+        
+    // Record 2
+    'records.person2.name': 'Мария Петрова',
+    'records.record2.name': 'Най-силен резултат',
+    'records.record2.description': 'Рекорд по физическа сила и издръжливост',
+    'records.person2.alt': 'Снимка на Мария Петрова',
+    'records.record2.alt': 'Илюстрация на рекорд за сила',
+    'records.record2.place1': 'Мария Петрова - 150 кг',
+    'records.record2.place2': 'Георги Димитров - 145 кг',
+    'records.record2.place3': 'Анна Стоянова - 140 кг',
+        
+    // Record 3
+    'records.person3.name': 'Георги Димитров',
+    'records.record3.name': 'Най-креативно решение',
+    'records.record3.description': 'Изключително креативно постижение',
+    'records.person3.alt': 'Снимка на Георги Димитров',
+    'records.record3.alt': 'Илюстрация на креативен рекорд',
+    'records.record3.place1': 'Георги Димитров - Иновативен проект',
+    'records.record3.place2': 'Елена Маркова - Креативен дизайн',
+    'records.record3.place3': 'Стефан Иванов - Уникално решение',
+        
+    // Record 4
+    'records.person4.name': 'Анна Стоянова',
+    'records.record4.name': 'Най-дълъг маратон',
+    'records.record4.description': 'Рекорд по продължителност и издръжливост',
+    'records.person4.alt': 'Снимка на Анна Стоянова',
+    'records.record4.alt': 'Илюстрация на маратон рекорд',
+    'records.record4.place1': 'Анна Стоянова - 8 часа 15 мин',
+    'records.record4.place2': 'Димитър Петров - 7 часа 45 мин',
+    'records.record4.place3': 'София Георгиева - 7 часа 20 мин',
+
     // Auth pages
     'auth.welcomeBack': 'Добре дошъл отново',
     'auth.enterDark': 'Очаквахме те',

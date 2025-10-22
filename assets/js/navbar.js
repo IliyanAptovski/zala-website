@@ -1,5 +1,4 @@
-import { auth } from "./firebase.js";
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { supabase } from "./supabase-config.js";
 
 const navLogin = document.getElementById("nav-login");
 const navSignup = document.getElementById("nav-signup");
@@ -7,32 +6,58 @@ const navUserGreeting = document.getElementById("nav-user-greeting");
 const navUserName = document.getElementById("nav-user-name");
 const navLogoutBtn = document.getElementById("nav-logout-btn");
 
-onAuthStateChanged(auth, (user) => {
+async function checkUser() {
+  const { data: { user }, error } = await supabase.auth.getUser();
+
   if (user) {
-    navLogin.style.display = "none";
-    navSignup.style.display = "none";
+  // Logged in
+  navLogin.style.display = "none";
+  navSignup.style.display = "none";
 
-    navUserGreeting.style.display = "inline";
-    navUserName.textContent = user.displayName || user.email || "Friend";
+  navUserGreeting.style.display = "inline";
 
-    navLogoutBtn.style.display = "inline-block";
-  } else {
-    navLogin.style.display = "inline-block";
-    navSignup.style.display = "inline-block";
+  // Use profile display_name if available, otherwise fallback to email or generic "Friend"
+  const displayName =
+    window.userProfile?.display_name || // from Supabase users table
+    user.user_metadata?.full_name ||   // from OAuth metadata
+    user.email || 
+    "Friend";
 
-    navUserGreeting.style.display = "none";
-    navUserName.textContent = "";
-    navLogoutBtn.style.display = "none";
-  }
-});
+  navUserName.textContent = displayName;
 
+  navLogoutBtn.style.display = "inline-block";
+} else {
+  // Logged out
+  navLogin.style.display = "inline-block";
+  navSignup.style.display = "inline-block";
+
+  navUserGreeting.style.display = "none";
+  navUserName.textContent = "";
+  navLogoutBtn.style.display = "none";
+}
+}
+
+// --- Handle logout ---
 if (navLogoutBtn) {
   navLogoutBtn.addEventListener("click", async () => {
     try {
-      await signOut(auth);
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      console.log("✅ Logged out successfully");
       window.location.href = "index.html";
-    } catch (error) {
-      console.error(error.message);
+    } catch (err) {
+      console.error("❌ Logout failed:", err.message);
+      alert("Logout failed: " + err.message);
     }
   });
 }
+
+// --- Listen for auth state changes (live updates) ---
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event === "SIGNED_IN" || event === "SIGNED_OUT") {
+    checkUser();
+  }
+});
+
+// --- Initial check when the page loads ---
+document.addEventListener("DOMContentLoaded", checkUser);
