@@ -10,7 +10,7 @@ const translations = {
     'nav.logout': 'Logout',
     'nav.greeting': 'Hello',
     
-    // Home page
+    // HOME PAGE
     'hero.title': 'Welcome to The Zala',
     'hero.tagline': '“If you don\'t give it to us, we\'ll take it ourselves!”',
 
@@ -24,10 +24,11 @@ const translations = {
     // News Section
     'news.title': 'Updates from the Zala',
     'news.renovationUpdate': 'Renovation Progress', 
-    'news.renovationText': ' Completed the ceiling in the weightlifting room and installed a new window, improving visuals and structure. Began and finished the wall next to the entrance in the table tennis room.',
+    'news.renovationText': 'Completed the walls and the ceiling in the weightlifting room.',
     'news.newQuotes': 'New Quotes Added',
     'news.quotesText': 'Six new quotes added.',
-    'news.date': 'October 2025',
+    'news.date.renovation': 'November 2025',
+    'news.date.quotesAdded': 'October 2025',
     
     // Staff Section
     'staff.title': 'Staff',
@@ -112,7 +113,7 @@ const translations = {
     'location.digital.description': 'From the Town Hall to the Network — the Zala remains',
 
     // Page titles and content
-    'page.renovation.title': 'The Evolution of the Zala',
+    'page.renovation.title': 'Renovation of the Zala',
     'page.renovation.text': 'Follow our transformation through time.',
     'page.quotes.title': 'Zala Quotes',
     'page.stories.title': 'Scary Stories from the Zala',
@@ -168,6 +169,25 @@ const translations = {
     'records.record4.place2': 'Dimitar Petrov - 7 hours 45 min',
     'records.record4.place3': 'Sofia Georgieva - 7 hours 20 min',
 
+    // Renovation Page
+    'renovation.title': 'Renovation of the Zala',
+    'renovation.subtitle': 'Follow our transformation through time.',
+
+    'renovation.before': 'Before',
+    'renovation.after': 'After',
+
+    // Weightlifting Room
+    'renovation.weightlifting.title': 'Weightlifting Room',
+    'renovation.weightlifting.desc': 'Finished all the walls and the ceiling of the room.',
+
+    // Table Tennis Room
+    'renovation.tableTennis.title': 'Table Tennis Room',
+    'renovation.tableTennis.desc': 'Finished wall by the entrance.',
+
+    // Lounge Room
+    'renovation.lounge.title': 'Lounge Area',
+    'renovation.lounge.desc': 'Renewed floor, painted walls, and added light accents.',
+
     // Auth pages
     'auth.welcomeBack': 'Welcome Back',
     'auth.enterDark': 'We\'ve been waiting for you.',
@@ -195,7 +215,7 @@ const translations = {
     'nav.logout': 'Изход',
     'nav.greeting': 'Здравей',
     
-    // Home page
+    // HOME PAGE
     'hero.title': 'Добре дошли в Залата',
     'hero.tagline': '„Ако не ни го дадеш, ще си го вземем сами!“',
 
@@ -209,10 +229,11 @@ const translations = {
     // News Section
     'news.title': 'Актуално от Залата',
     'news.renovationUpdate': 'Напредък по ремонта', 
-    'news.renovationText': 'Завършен е таванът в залата за вдигане на тежести и е поставен нов прозорец, подобрявайки визията и конструкцията. Започната и завършена е стената до входа в залата за тенис на маса.',
+    'news.renovationText': 'Завършен е таванът и стените в залата за вдигане на тежести.',
     'news.newQuotes': 'Добавени цитати',
     'news.quotesText': 'Добавени са шест нови цитата.',
-    'news.date': 'Октомври 2025',
+    'news.date.renovation': 'Ноември 2025',
+    'news.date.quotesAdded': 'Октомври 2025',
     
     // Staff Section
     'staff.title': 'Екип',
@@ -353,6 +374,25 @@ const translations = {
     'records.record4.place1': 'Анна Стоянова - 8 часа 15 мин',
     'records.record4.place2': 'Димитър Петров - 7 часа 45 мин',
     'records.record4.place3': 'София Георгиева - 7 часа 20 мин',
+
+    // Renovation Page
+    'renovation.title': 'Ремонт на Залата',
+    'renovation.subtitle': 'Проследете нашата трансформация през времето.',
+
+    'renovation.before': 'Преди',
+    'renovation.after': 'След',
+
+    // Weightlifting Room
+    'renovation.weightlifting.title': 'Стаята с тежести',
+    'renovation.weightlifting.desc': 'Завършен таван и всички стени.',
+
+    // Table Tennis Room
+    'renovation.tableTennis.title': 'Стая за тенис на маса',
+    'renovation.tableTennis.desc': 'Завършена стена до входа.',
+
+    // Lounge Room
+    'renovation.lounge.title': 'Зона за Почивка',
+    'renovation.lounge.desc': 'Обновен под, боядисани стени и добавени светлинни акценти.',
 
     // Auth pages
     'auth.welcomeBack': 'Добре дошъл отново',
