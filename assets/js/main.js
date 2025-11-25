@@ -70,10 +70,9 @@ const translations = {
 
     // Selvi
     'staff.selvi.name': 'Selvi',
-    'staff.selvi.role': 'Quote Collector',
-    'staff.selvi.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
-    'staff.selvi.alt': 'Selvi portrait',
+    'staff.selvi.role': 'Spreads, wipes, and rubs',
+    'staff.selvi.bio': 'If there’s a hole I know hot to fix it.',
+    'staff.selvi.quote': '"I plug holes of every kind."',
 
     // Dani
     'staff.dani.name': 'Dani',
@@ -88,6 +87,27 @@ const translations = {
     'staff.veli.bio': 'Comes over from America every now and then during the summer.',
     'staff.veli.quote': '"I plan to produce massive amounts of manure."',
     'staff.veli.alt': 'Veli portrait',
+
+    // Viki
+    'staff.viki.name': 'Abla Mediha',
+    'staff.viki.role': 'Recites Ezan through the window',
+    'staff.viki.bio': 'Hosgeldin – hosbulduk.',
+    'staff.viki.quote': '"Syusyulman."',
+    'staff.viki.alt': 'Viki portrait',
+
+    // Gabi
+    'staff.gabi.name': 'Gabi',
+    'staff.gabi.role': 'Animal Planet',
+    'staff.gabi.bio': 'Promises miracles for money.',
+    'staff.gabi.quote': '"Give me €50,000 and I’ll deliver him for one day."',
+    'staff.gabi.alt': 'Gabi portrait',
+
+    // Aylin
+    'staff.aylin.name': 'Aylin',
+    'staff.aylin.role': 'Minx',
+    'staff.aylin.bio': 'Buchoskoto.',
+    'staff.aylin.quote': '"Proud agent of Rudozem Enterprise."',
+    'staff.aylin.alt': 'Aylin portrait',
 
     // Support Section
     'support.title': 'Support & Connection',
@@ -275,11 +295,10 @@ const translations = {
 
     // Selvi
     'staff.selvi.name': 'Селви',
-    'staff.selvi.role': 'Quote Collector',
-    'staff.selvi.bio': 'Keeper of the ancient words and modern mispronunciations.',
-    'staff.selvi.quote': '"Аузубуляха кога ли ще дойде."',
+    'staff.selvi.role': 'Маже, трие и брише',
+    'staff.selvi.bio': 'Щом има дупка, знам как да я оправя.',
+    'staff.selvi.quote': '"Запушвам дупки всекакви."',
     'staff.selvi.alt': 'Selvi portrait',
-
 
     // Dani
     'staff.dani.name': 'Дани',
@@ -294,6 +313,27 @@ const translations = {
     'staff.veli.bio': 'Дохада от Америка чат пат летоска.',
     'staff.veli.quote': '"Възнамерявам да произвеждам огромни количества гибре."',
     'staff.veli.alt': 'Veli portrait',
+
+    // Viki
+    'staff.viki.name': 'Абла Медиха',
+    'staff.viki.role': 'Рука езан през жема',
+    'staff.viki.bio': 'Хошкелдин – хошбулдук.',
+    'staff.viki.quote': '"Сюсюлман."',
+    'staff.viki.alt': 'Viki portrait',
+
+    // Aylin
+    'staff.aylin.name': 'Айлин',
+    'staff.aylin.role': 'Минкс',
+    'staff.aylin.bio': 'Бучоското.',
+    'staff.aylin.quote': '"Горд представител на Рудозем Ентърпрайс."',
+    'staff.aylin.alt': 'Aylin portrait',
+
+    // Gabi
+    'staff.gabi.name': 'Габи',
+    'staff.gabi.role': 'Енимал планет',
+    'staff.gabi.bio': 'Обещава чудеса срещу пари.',
+    'staff.gabi.quote': '"Дай ми €50,000 и ти го давам за един ден."',
+    'staff.gabi.alt': 'Gabi portrait',
 
     // Support Section
     'support.title': 'Подкрепа и Връзка',
