@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/transitions.css">
   <link rel="stylesheet" href="assets/css/home.css">
 </head>
+
 <body class="home">
   <header class="navbar">
     <div class="logo">
@@ -20,11 +22,11 @@
         <li><a href="renovation.html" id="nav-renovation" data-i18n="nav.renovation">Renovation</a></li>
         <li><a href="quotes.html" id="nav-quotes" data-i18n="nav.quotes">Quotes</a></li>
         <li><a href="records.html" id="nav-records" data-i18n="nav.records">Records</a></li>
-        
+
         <!-- These will be hidden when logged in -->
         <li><a href="login.html" id="nav-login" data-i18n="nav.login">Login</a></li>
         <li><a href="signup.html" id="nav-signup" data-i18n="nav.signup">Sign Up</a></li>
-        
+
         <!-- These will be shown when logged in -->
         <li id="nav-user-greeting" style="display:none;">
           <span data-i18n="nav.greeting">Hello</span>, <span id="nav-user-name"></span>!
@@ -34,16 +36,16 @@
         </li>
       </ul>
     </nav>
-  <div class="navbar-controls">
-    <div class="navbar-info">
-      <div class="navbar-hours" data-i18n="nav.hours">OPEN 24/7</div>
-      <div class="navbar-location" data-i18n="nav.location">Studena, Madan Municipality, Smolyan Province</div>
+    <div class="navbar-controls">
+      <div class="navbar-info">
+        <div class="navbar-hours" data-i18n="nav.hours">OPEN 24/7</div>
+        <div class="navbar-location" data-i18n="nav.location">Studena, Madan Municipality, Smolyan Province</div>
+      </div>
+      <div class="lang-toggle">
+        <button id="lang-en">🇬🇧</button>
+        <button id="lang-bg" class="active">🇧🇬</button>
+      </div>
     </div>
-    <div class="lang-toggle">
-      <button id="lang-en">🇬🇧</button>
-      <button id="lang-bg" class="active">🇧🇬</button>
-    </div>
-  </div>
   </header>
 
   <main class="content">
@@ -77,41 +79,41 @@
     <!-- Song of the Week Section - HOME PAGE ONLY -->
     <section class="song-section">
       <h2 data-i18n="song.title">Song of the Week</h2>
-      
+
       <div class="song-player loading">
         <!-- Video Background -->
         <div class="song-background">
-            <video id="background-video" autoplay muted loop playsinline>
-                <source src="./assets/videos/song-of-the-week/background-loop.mp4" type="video/mp4">
-                <source src="/assets/videos/background-loop.webm" type="video/webm">
-                <!-- Fallback image if video doesn't load -->
-                <img src="./assets/img/song-of-the-week/song_of_the_week_fallback_background.jpg" alt="Background">
-            </video>
+          <video id="background-video" autoplay muted loop playsinline>
+            <source src="./assets/videos/song-of-the-week/background-loop.mp4" type="video/mp4">
+            <source src="/assets/videos/background-loop.webm" type="video/webm">
+            <!-- Fallback image if video doesn't load -->
+            <img src="./assets/img/song-of-the-week/song_of_the_week_fallback_background.jpg" alt="Background">
+          </video>
         </div>
-        
+
         <!-- Dark overlay -->
         <div class="song-overlay"></div>
-        
+
         <!-- Player content -->
         <div class="song-name-wrapper">
-            <div class="song-name-container">
-                <div class="song-name" data-i18n="song.name">Sasho Roman - Of, of</div>
-            </div>
+          <div class="song-name-container">
+            <div class="song-name" data-i18n="song.name">Sasho Roman - Of, of</div>
+          </div>
         </div>
-        
+
         <div class="audio-player">
-            <button id="audio-play-btn" class="audio-play-btn">
-                <span class="play-icon">▶</span>
-                <span class="pause-icon" style="display: none;">❚❚</span>
-            </button>
-            <div id="song-time" class="song-time">0:00</div>
+          <button id="audio-play-btn" class="audio-play-btn">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none;">❚❚</span>
+          </button>
+          <div id="song-time" class="song-time">0:00</div>
         </div>
-        
+
         <div id="now-playing" class="now-playing" data-i18n="song.playing" style="display: none;">NOW PLAYING</div>
-        
+
         <audio id="song-audio" preload="metadata">
-            <source src="./assets/audio/song-of-the-week.mp3" type="audio/mpeg">
-            <source src="./assets/audio/song-of-the-week.ogg" type="audio/ogg">
+          <source src="./assets/audio/song-of-the-week.mp3" type="audio/mpeg">
+          <source src="./assets/audio/song-of-the-week.ogg" type="audio/ogg">
         </audio>
       </div>
     </section>
@@ -120,15 +122,18 @@
     <section class="staff-section">
       <h2 data-i18n="staff.title">Staff</h2>
       <div class="staff-grid">
+
         <!-- The Transformer Keeper -->
         <div class="staff-card">
-          <img src="./assets/img/staff/theTransformerKeeper.jpg" alt="The Transformer Keeper" data-i18n-alt="staff.theTransformerKeeper.alt">
+          <img src="./assets/img/staff/theTransformerKeeper.jpg" alt="The Transformer Keeper"
+            data-i18n-alt="staff.theTransformerKeeper.alt">
           <h3 data-i18n="staff.theTransformerKeeper.name">The Transformer Keeper</h3>
           <span class="staff-role" data-i18n="staff.theTransformerKeeper.role">Head of Maintenance</span>
           <p data-i18n="staff.theTransformerKeeper.bio">Keeps the lights flickering — and the voices clear.</p>
-          <blockquote data-i18n="staff.theTransformerKeeper.quote">"The lights flicker… but I never forget."</blockquote>
+          <blockquote data-i18n="staff.theTransformerKeeper.quote">"The lights flicker… but I never forget."
+          </blockquote>
         </div>
-        
+
         <!-- Denis -->
         <div class="staff-card">
           <img src="./assets/img/staff/denis.jpg" alt="Denis" data-i18n-alt="staff.denis.alt">
@@ -146,6 +151,7 @@
           <p data-i18n="staff.sevgin.bio">The strongest one in the Zala.</p>
           <blockquote data-i18n="staff.sevgin.quote">"strikes first feels the end… no drama, just fact."</blockquote>
         </div>
+
         <!-- Iliyan -->
         <div class="staff-card">
           <img src="./assets/img/staff/iliyan.jpg" alt="Iliyan" data-i18n-alt="staff.iliyan.alt">
@@ -154,6 +160,7 @@
           <p data-i18n="staff.iliyan.bio">Hanged twice, buried once.</p>
           <blockquote data-i18n="staff.iliyan.quote">"Не мога да си държе ръкъть."</blockquote>
         </div>
+
         <!-- Sevdi -->
         <div class="staff-card">
           <img src="./assets/img/staff/sevdi.jpg" alt="Sevdi" data-i18n-alt="staff.sevdi.alt">
@@ -162,16 +169,16 @@
           <p data-i18n="staff.sevdi.bio">Delesanhills member.</p>
           <blockquote data-i18n="staff.sevdi.quote">"Where there’s work, I’ve got no business being there."</blockquote>
         </div>
+
         <!-- Selvi -->
-         <!--
         <div class="staff-card">
           <img src="./assets/img/staff/selvi.jpg" alt="selvi" data-i18n-alt="staff.selvi.alt">
           <h3 data-i18n="staff.selvi.name">Selvi</h3>
-          <span class="staff-role" data-i18n="staff.selvi.role">Story Weaver</span>
-          <p data-i18n="staff.selvi.bio">Spinner of tales and guardian of the whispering walls.</p>
-          <blockquote data-i18n="staff.selvi.quote">"Не мога да си държе ръкъть."</blockquote>
+          <span class="staff-role" data-i18n="staff.selvi.role">Spreads, wipes, and rubs</span>
+          <p data-i18n="staff.selvi.bio">If there’s a hole I know hot to fix it.</p>
+          <blockquote data-i18n="staff.selvi.quote">"I plug holes of every kind."</blockquote>
         </div>
-         -->
+
         <!-- Dani -->
         <div class="staff-card">
           <img src="./assets/img/staff/dani.jpg" alt="Dani" data-i18n-alt="staff.dani.alt">
@@ -180,13 +187,41 @@
           <p data-i18n="staff.dani.bio">If something blows up, it’s either a storm — or I’m fixing the cables.</p>
           <blockquote data-i18n="staff.dani.quote">"Can or can’t — just make it work somehow."</blockquote>
         </div>
-        <!--Veli-->
+
+        <!-- Veli -->
         <div class="staff-card">
           <img src="./assets/img/staff/veli.jpg" alt="Veli" data-i18n-alt="staff.veli.alt">
           <h3 data-i18n="staff.veli.name">Veli</h3>
           <span class="staff-role" data-i18n="staff.veli.role">The American Wire Guy</span>
           <p data-i18n="staff.veli.bio">Comes over from America every now and then during the summer.</p>
           <blockquote data-i18n="staff.veli.quote">"I plan to produce massive amounts of manure."</blockquote>
+        </div>
+
+        <!-- Viki -->
+        <div class="staff-card">
+          <img src="./assets/img/staff/viki.jpg" alt="Viki" data-i18n-alt="staff.viki.alt">
+          <h3 data-i18n="staff.viki.name">Abla Mediha</h3>
+          <span class="staff-role" data-i18n="staff.viki.role">Recites Ezan through the window.</span>
+          <p data-i18n="staff.viki.bio">Hosgeldin – hosbulduk.</p>
+          <blockquote data-i18n="staff.viki.quote">"Syusyulman."</blockquote>
+        </div>
+
+        <!-- Gabi -->
+        <div class="staff-card">
+          <img src="./assets/img/staff/gabi.jpg" alt="Gabi" data-i18n-alt="staff.gabi.alt">
+          <h3 data-i18n="staff.gabi.name">Gabi</h3>
+          <span class="staff-role" data-i18n="staff.gabi.role">Animal Planet</span>
+          <p data-i18n="staff.gabi.bio">Promises miracles for money.</p>
+          <blockquote data-i18n="staff.gabi.quote">"Give me €50,000 and I’ll deliver him for one day."</blockquote>
+        </div>
+
+        <!-- Aylin -->
+        <div class="staff-card">
+          <img src="./assets/img/staff/aylin.jpg" alt="Aylin" data-i18n-alt="staff.aylin.alt">
+          <h3 data-i18n="staff.aylin.name">Aylin</h3>
+          <span class="staff-role" data-i18n="staff.aylin.role">Minx</span>
+          <p data-i18n="staff.aylin.bio">Buchoskoto.</p>
+          <blockquote data-i18n="staff.aylin.quote">"Proud agent of Rudozem Enterprise."</blockquote>
         </div>
       </div>
     </section>
@@ -195,7 +230,7 @@
     <section class="location-section">
       <h2 data-i18n="location.title">Find Us</h2>
       <p data-i18n="location.subtitle">The Zala is everywhere the stories are told</p>
-      
+
       <div class="location-info">
         <div class="location-card">
           <h3 data-i18n="location.physical.title">Physical Space</h3>
@@ -203,7 +238,7 @@
           <p data-i18n="location.physical.city">Sofia, Bulgaria</p>
           <p data-i18n="location.physical.description">Where the walls first started whispering</p>
         </div>
-        
+
         <div class="location-card">
           <h3 data-i18n="location.digital.title">Digital Presence</h3>
           <p data-i18n="location.digital.platform">Always available online</p>
@@ -227,7 +262,7 @@
   <footer>
     <p id="footer-text" data-i18n="footer.text">© Зала 2025</p>
   </footer>
-  
+
   <script type="module" src="assets/js/supabase-config.js"></script>
   <script type="module" src="assets/js/supabase-auth.js"></script>
   <script type="module" src="assets/js/main.js"></script>
@@ -235,4 +270,5 @@
   <script type="module" src="assets/js/transitions.js"></script>
   <script src="assets/js/home-audio.js"></script>
 </body>
+
 </html>
