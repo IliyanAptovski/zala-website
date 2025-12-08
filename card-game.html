@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zala | Higher or Lower Card Game</title>
+    <link rel="shortcut icon" href="./assets/img/fav_icon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/card-game.css" />
+</head>
+
+<body class="home card-game-page">
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="ZALA Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="nav-home" data-i18n="nav.home">Home</a></li>
+                <li><a href="renovation.html" id="nav-renovation" data-i18n="nav.renovation">Renovation</a></li>
+                <li><a href="quotes.html" id="nav-quotes" data-i18n="nav.quotes">Quotes</a></li>
+                <li><a href="records.html" id="nav-records" data-i18n="nav.records">Records</a></li>
+                <li><a href="card-game.html" id="nav-card-game" data-i18n="nav.card-game">Kenef</a></li>
+
+                <li><a href="login.html" id="nav-login" data-i18n="nav.login">Login</a></li>
+                <li><a href="signup.html" id="nav-signup" data-i18n="nav.signup">Sign Up</a></li>
+
+                <li id="nav-user-greeting" style="display:none;">
+                    <span data-i18n="nav.greeting">Hello</span>, <span id="nav-user-name"></span>!
+                </li>
+                <li>
+                    <button id="nav-logout-btn" style="display:none;" data-i18n="nav.logout">Logout</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="navbar-controls">
+            <div class="navbar-info">
+                <div class="navbar-hours" data-i18n="nav.hours">OPEN 24/7</div>
+                <div class="navbar-location" data-i18n="nav.location">Studena, Madan Municipality, Smolyan Province
+                </div>
+            </div>
+            <div class="lang-toggle">
+                <button id="lang-en">🇬🇧</button>
+                <button id="lang-bg" class="active">🇧🇬</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="content card-game-container">
+        <section class="game-area">
+            <!-- Top Red Half -->
+            <div class="half half-top">
+                <div class="half-content">
+                    <div class="half-label" data-i18n="game.lower">Lower</div>
+                </div>
+            </div>
+
+            <!-- Center Card -->
+            <div class="card-center">
+                <div class="card-wrapper" id="cardWrapper">
+                    <div class="card" id="card">
+                        <div class="card-face card-back"></div>
+                        <div class="card-face card-front">
+                            <img src="" alt="Card Front" class="card-img" id="cardFrontImg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Black Half -->
+            <div class="half half-bottom">
+                <div class="half-content">
+                    <div class="half-label" data-i18n="game.higher">Higher</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <!--
+        <section class="rules-section">
+            <div class="rules-container">
+                <h2 class="rules-title" data-i18n="game.rulesTitle">Game Rules</h2>
+
+                <div class="rules-list">
+                    <div class="rule-item">
+                        <div class="rule-number">1</div>
+                        <div class="rule-content">
+                            <h4 data-i18n="game.rule1.title">Start</h4>
+                            <p data-i18n="game.rule1.text">The game begins by revealing one card. Before that, players
+                                must guess its color (red or black). The entry bet is required.</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-number">2</div>
+                        <div class="rule-content">
+                            <h4 data-i18n="game.rule2.title">Color guess</h4>
+                            <ul>
+                                <li data-i18n="game.rule2.li1">If no one guesses correctly, the pot carries over to the
+                                    next round.</li>
+                                <li data-i18n="game.rule2.li2">Correct guessers continue and each receives one card.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-number">3</div>
+                        <div class="rule-content">
+                            <h4 data-i18n="game.rule3.title">If the first card is red</h4>
+                            <p data-i18n="game.rule3.text">Players compete for the lowest card. Ace counts as 1
+                                (lowest). A card identical to the table card wins instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-number">4</div>
+                        <div class="rule-content">
+                            <h4 data-i18n="game.rule4.title">If the first card is black</h4>
+                            <p data-i18n="game.rule4.text">Players compete for the highest card. Ace is the highest. A
+                                card identical to the table card wins instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item">
+                        <div class="rule-number">5</div>
+                        <div class="rule-content">
+                            <h4 data-i18n="game.rule5.title">Tie (Svara)</h4>
+                            <p data-i18n="game.rule5.text">If players tie with identical cards, a svara (tiebreaker) is
+                                played. Eliminated players may rejoin. The returning players must pay half of the pot.
+                                Each player receives a new card.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">&copy; Zala</div>
+    </footer>
+
+    <script type="module" src="assets/js/supabase-config.js"></script>
+    <script type="module" src="assets/js/supabase-auth.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/navbar.js"></script>
+    <script type="module" src="assets/js/transitions.js"></script>
+    <script src="assets/js/card-game.js" defer></script>
+</body>
+
+</html>
