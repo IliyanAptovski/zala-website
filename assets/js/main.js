@@ -8,8 +8,9 @@ const translations = {
     'nav.login': 'Login',
     'nav.signup': 'Sign Up',
     'nav.logout': 'Logout',
+    'nav.card-game': 'Kenef',
     'nav.greeting': 'Hello',
-    
+
     // HOME PAGE
     'hero.title': 'Welcome to The Zala',
     'hero.tagline': '“If you don\'t give it to us, we\'ll take it ourselves!”',
@@ -23,13 +24,13 @@ const translations = {
 
     // News Section
     'news.title': 'Updates from the Zala',
-    'news.renovationUpdate': 'Renovation Progress', 
+    'news.renovationUpdate': 'Renovation Progress',
     'news.renovationText': 'Completed the walls and the ceiling in the weightlifting room.',
     'news.newQuotes': 'New Quotes Added',
     'news.quotesText': 'Six new quotes added.',
     'news.date.renovation': 'November 2025',
     'news.date.quotesAdded': 'October 2025',
-    
+
     // Staff Section
     'staff.title': 'Staff',
 
@@ -124,7 +125,7 @@ const translations = {
 
     'location.physical.title': 'Physical Space',
     'location.physical.address': 'Town Hall, Studena, 1st floor',
-    'location.physical.city': 'Studena, Madan Municipality, Smolyan Province', 
+    'location.physical.city': 'Studena, Madan Municipality, Smolyan Province',
     'location.physical.description': 'Where everything began',
 
     'location.digital.title': 'Digital Presence',
@@ -137,10 +138,10 @@ const translations = {
     'page.renovation.text': 'Follow our transformation through time.',
     'page.quotes.title': 'Zala Quotes',
     'page.stories.title': 'Scary Stories from the Zala',
-    
+
     // Footer
     'footer.text': '© Zala 2025',
-    
+
     // Record Page
     'records.title': 'Hall of Records',
     'records.subtitle': 'Celebrating extraordinary achievements and milestones',
@@ -148,8 +149,8 @@ const translations = {
     'records.places.first': '1st Place',
     'records.places.second': '2nd Place',
     'records.places.third': '3rd Place',
-        
-     // Record 1
+
+    // Record 1
     'records.person1.name': 'Ivan Ivanov',
     'records.record1.name': 'Record for the Dumbest Choice',
     'records.record1.description': 'Achieved the fastest time in Zala history',
@@ -158,7 +159,7 @@ const translations = {
     'records.record1.place1': 'Ivan Ivanov - 12.5 sec',
     'records.record1.place2': 'Peter Georgiev - 13.2 sec',
     'records.record1.place3': 'Maria Ilieva - 13.8 sec',
-        
+
     // Record 2
     'records.person2.name': 'Maria Petrova',
     'records.record2.name': 'Strongest Result',
@@ -168,7 +169,7 @@ const translations = {
     'records.record2.place1': 'Maria Petrova - 150 kg',
     'records.record2.place2': 'Georgi Dimitrov - 145 kg',
     'records.record2.place3': 'Anna Stoyanova - 140 kg',
-        
+
     // Record 3
     'records.person3.name': 'Georgi Dimitrov',
     'records.record3.name': 'Most Creative Solution',
@@ -178,7 +179,7 @@ const translations = {
     'records.record3.place1': 'Georgi Dimitrov - Innovative Project',
     'records.record3.place2': 'Elena Markova - Creative Design',
     'records.record3.place3': 'Stefan Ivanov - Unique Solution',
-        
+
     // Record 4
     'records.person4.name': 'Anna Stoyanova',
     'records.record4.name': 'Longest Marathon',
@@ -222,7 +223,14 @@ const translations = {
     'auth.googleSignup': 'Sign up with Google',
     'auth.haveAccount': 'You\'re not on the list?',
     'auth.noAccount': 'So you\'re one of us now?',
-    'auth.or': 'or'
+    'auth.or': 'or',
+
+    // Card Game (Kenef)
+    'game.lower': 'Lower',
+    'game.higher': 'Higher',
+    'game.rules': 'Rules',
+    'game.rulesTitle': 'How to Play',
+    'game.rulesText': ''
   },
   'bg': {
     // Navigation
@@ -233,8 +241,9 @@ const translations = {
     'nav.login': 'Вход',
     'nav.signup': 'Регистрация',
     'nav.logout': 'Изход',
+    'nav.card-game': 'Кенеф',
     'nav.greeting': 'Здравей',
-    
+
     // HOME PAGE
     'hero.title': 'Добре дошли в Залата',
     'hero.tagline': '„Ако не ни го дадеш, ще си го вземем сами!“',
@@ -248,13 +257,13 @@ const translations = {
 
     // News Section
     'news.title': 'Актуално от Залата',
-    'news.renovationUpdate': 'Напредък по ремонта', 
+    'news.renovationUpdate': 'Напредък по ремонта',
     'news.renovationText': 'Завършен е таванът и стените в залата за вдигане на тежести.',
     'news.newQuotes': 'Добавени цитати',
     'news.quotesText': 'Добавени са шест нови цитата.',
     'news.date.renovation': 'Ноември 2025',
     'news.date.quotesAdded': 'Октомври 2025',
-    
+
     // Staff Section
     'staff.title': 'Екип',
 
@@ -357,24 +366,24 @@ const translations = {
     'location.digital.platform': 'Винаги достъпна онлайн',
     'location.digital.access': 'Достъпна от всяко място, по всяко време',
     'location.digital.description': 'От кметството до мрежата — Залата остава.',
-    
+
     // Page titles and content
     'page.renovation.title': 'Ремонт на Залата',
     'page.renovation.text': 'Проследете нашата трансформация през времето.',
     'page.quotes.title': 'Цитати от Залата',
     'page.stories.title': 'Страшни истории от Залата',
-    
+
     // Footer
     'footer.text': '© Зала 2025',
-    
+
     // Record Page
     'records.title': 'Зала на славата',
     'records.subtitle': 'Отбелязваме изключителни постижения и рекорди',
     'records.places.title': 'Топ 3 места',
     'records.places.first': '1-во място',
-    'records.places.second': '2-ро място', 
+    'records.places.second': '2-ро място',
     'records.places.third': '3-то място',
-        
+
     // Record 1
     'records.person1.name': 'Иван Иванов',
     'records.record1.name': 'Най-бързо време',
@@ -384,7 +393,7 @@ const translations = {
     'records.record1.place1': 'Иван Иванов - 12.5 сек',
     'records.record1.place2': 'Петър Георгиев - 13.2 сек',
     'records.record1.place3': 'Мария Илиева - 13.8 сек',
-        
+
     // Record 2
     'records.person2.name': 'Мария Петрова',
     'records.record2.name': 'Най-силен резултат',
@@ -394,7 +403,7 @@ const translations = {
     'records.record2.place1': 'Мария Петрова - 150 кг',
     'records.record2.place2': 'Георги Димитров - 145 кг',
     'records.record2.place3': 'Анна Стоянова - 140 кг',
-        
+
     // Record 3
     'records.person3.name': 'Георги Димитров',
     'records.record3.name': 'Най-креативно решение',
@@ -404,7 +413,7 @@ const translations = {
     'records.record3.place1': 'Георги Димитров - Иновативен проект',
     'records.record3.place2': 'Елена Маркова - Креативен дизайн',
     'records.record3.place3': 'Стефан Иванов - Уникално решение',
-        
+
     // Record 4
     'records.person4.name': 'Анна Стоянова',
     'records.record4.name': 'Най-дълъг маратон',
@@ -448,7 +457,14 @@ const translations = {
     'auth.googleSignup': 'Регистрация с Google',
     'auth.haveAccount': 'Не си в списъка?',
     'auth.noAccount': 'Вече си един от нас?',
-    'auth.or': 'или'
+    'auth.or': 'или',
+
+    // Card Game (Kenef)
+    'game.lower': 'По-ниско',
+    'game.higher': 'По-високо',
+    'game.rules': 'Правила',
+    'game.rulesTitle': 'Правила',
+    'game.rulesText': ''
   }
 };
 
@@ -466,7 +482,7 @@ function setCurrentLanguage(lang) {
 // Generic translation function using data attributes
 function updateDataAttributeTranslations(lang) {
   const t = translations[lang];
-  
+
   // Update elements with data-i18n
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
@@ -474,7 +490,7 @@ function updateDataAttributeTranslations(lang) {
       element.textContent = t[key];
     }
   });
-  
+
   // Update placeholder texts
   document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
     const key = element.getAttribute('data-i18n-placeholder');
@@ -499,7 +515,7 @@ function setLanguage(lang) {
   const navStories = document.getElementById('nav-stories');
   const navLogin = document.getElementById('nav-login');
   const navSignup = document.getElementById('nav-signup');
-  
+
   if (navHome) navHome.textContent = t['nav.home'];
   if (navRenovation) navRenovation.textContent = t['nav.renovation'];
   if (navQuotes) navQuotes.textContent = t['nav.quotes'];
@@ -552,33 +568,33 @@ function setLanguage(lang) {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.log('DOM loaded, initializing language...');
-  
+
   // Set initial language
   const initialLang = getCurrentLanguage();
   setLanguage(initialLang);
-  
+
   // Add language toggle event listeners
   const langEn = document.getElementById('lang-en');
   const langBg = document.getElementById('lang-bg');
-  
+
   if (langEn) {
-    langEn.addEventListener('click', function(e) {
+    langEn.addEventListener('click', function (e) {
       e.preventDefault();
       console.log('English button clicked');
       setLanguage('en');
     });
   }
-  
+
   if (langBg) {
-    langBg.addEventListener('click', function(e) {
+    langBg.addEventListener('click', function (e) {
       e.preventDefault();
       console.log('Bulgarian button clicked');
       setLanguage('bg');
     });
   }
-  
+
   console.log('Language system initialized');
 });
 
