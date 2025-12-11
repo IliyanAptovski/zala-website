@@ -1,233 +1,467 @@
 import { supabase } from './supabase-config.js';
 
-console.log('🔧 SUPABASE AUTH INITIALIZED');
+console.log('🔧 Supabase Auth Initialized');
 
-// --- Global user state ---
+// --- Global state ---
 window.currentUser = null;
 window.userProfile = null;
-
-// Track if we're currently processing auth
 let isProcessingAuth = false;
+
+// --- Debug function ---
+function debugLog(message, data = null) {
+  console.log(`🔍 [Auth] ${message}`, data || '');
+}
 
 // --- Update Navbar UI ---
 function updateNavigationUI(isLoggedIn) {
-  const elements = {
-    navGreeting: document.getElementById('nav-user-greeting'),
-    navUserName: document.getElementById('nav-user-name'),
-    navLogoutBtn: document.getElementById('nav-logout-btn'),
-    navLogin: document.getElementById('nav-login'),
-    navSignup: document.getElementById('nav-signup')
+  debugLog('Updating navigation UI', { isLoggedIn });
+  
+  const nav = {
+    greeting: document.getElementById('nav-user-greeting'),
+    userName: document.getElementById('nav-user-name'),
+    logoutBtn: document.getElementById('nav-logout-btn'),
+    login: document.getElementById('nav-login'),
+    signup: document.getElementById('nav-signup')
   };
 
-  if (isLoggedIn) {
-    // Prefer profile name, then user_metadata, then email
+  debugLog('Nav elements found', {
+    greeting: !!nav.greeting,
+    logoutBtn: !!nav.logoutBtn,
+    login: !!nav.login,
+    signup: !!nav.signup
+  });
+
+  if (isLoggedIn && window.currentUser) {
     const name = window.userProfile?.display_name
                  || window.currentUser?.user_metadata?.full_name
                  || window.currentUser?.email?.split('@')[0]
                  || 'User';
 
-    if (elements.navGreeting) elements.navGreeting.style.display = 'block';
-    if (elements.navUserName) elements.navUserName.textContent = name;
-    if (elements.navLogoutBtn) elements.navLogoutBtn.style.display = 'block';
-    if (elements.navLogin) elements.navLogin.style.display = 'none';
-    if (elements.navSignup) elements.navSignup.style.display = 'none';
+    debugLog('User logged in, name:', name);
+
+    if (nav.greeting) {
+      nav.greeting.style.display = 'block';
+    }
+    if (nav.userName) {
+      nav.userName.textContent = name;
+    }
+    if (nav.logoutBtn) {
+      nav.logoutBtn.style.display = 'block';
+    }
+    if (nav.login) {
+      nav.login.style.display = 'none';
+    }
+    if (nav.signup) {
+      nav.signup.style.display = 'none';
+    }
   } else {
-    if (elements.navGreeting) elements.navGreeting.style.display = 'none';
-    if (elements.navLogoutBtn) elements.navLogoutBtn.style.display = 'none';
-    if (elements.navLogin) elements.navLogin.style.display = 'inline-block';
-    if (elements.navSignup) elements.navSignup.style.display = 'inline-block';
+    debugLog('User not logged in, showing auth links');
+    if (nav.greeting) nav.greeting.style.display = 'none';
+    if (nav.logoutBtn) nav.logoutBtn.style.display = 'none';
+    if (nav.login) nav.login.style.display = 'inline-block';
+    if (nav.signup) nav.signup.style.display = 'inline-block';
   }
 }
 
-// --- Load user profile safely ---
+// --- Load or create user profile ---
 async function loadUserProfile(userId) {
   try {
+    debugLog('Loading profile for user:', userId);
+    
+    // First, check if profiles table exists and has data
+    const { data: tableInfo, error: tableError } = await supabase
+      .from('profiles')
+      .select('id')
+      .limit(1);
+
+    if (tableError) {
+      debugLog('Profiles table error - table might not exist:', tableError);
+      return await createUserProfile(userId);
+    }
+
+    debugLog('Profiles table exists, querying user profile');
+
     const { data, error } = await supabase
-      .from('users')
-      .select('id, email, display_name, photo_url, role, created_at, last_login')
+      .from('profiles')
+      .select('*')
       .eq('id', userId)
       .maybeSingle();
 
-    if (error) console.warn('❗ Warning while fetching profile:', error);
+    if (error) {
+      debugLog('Error querying profile:', error);
+      throw error;
+    }
+
+    debugLog('Profile query result:', data);
 
     if (!data) {
-      console.log('ℹ️ No profile found. Creating one.');
+      debugLog('No profile found, creating new one');
       return await createUserProfile(userId);
-    } else {
-      console.log('✅ User profile loaded:', data);
-      window.userProfile = data;
-      return data;
     }
+
+    // Update last login time
+    const { error: updateError } = await supabase
+      .from('profiles')
+      .update({ last_login: new Date().toISOString() })
+      .eq('id', userId);
+
+    if (updateError) {
+      debugLog('Error updating last login:', updateError);
+    }
+
+    window.userProfile = data;
+    debugLog('Profile loaded successfully:', data);
+    return data;
   } catch (err) {
-    console.error('💥 Error loading profile:', err);
+    console.error('❌ Error loading profile:', err);
     return null;
   }
 }
 
-// --- Create user profile ---
 async function createUserProfile(userId) {
-  try {
-    const metadata = window.currentUser?.user_metadata || {};
-    const userData = {
-      id: userId,
-      email: window.currentUser?.email || null,
-      display_name: metadata.full_name || metadata.name || (window.currentUser?.email?.split('@')[0]) || 'User',
-      photo_url: metadata.avatar_url || metadata.picture || null,
-      role: 'user',
-      created_at: new Date().toISOString(),
-      last_login: new Date().toISOString()
-    };
+  debugLog('Creating new profile for user:', userId);
+  
+  const metadata = window.currentUser?.user_metadata || {};
+  const newProfile = {
+    id: userId,
+    email: window.currentUser?.email || null,
+    display_name: metadata.full_name || 
+                 metadata.name || 
+                 (window.currentUser?.email?.split('@')[0]) || 
+                 'User',
+    role: 'user',
+    created_at: new Date().toISOString(),
+    last_login: new Date().toISOString()
+  };
 
+  debugLog('New profile data:', newProfile);
+
+  try {
     const { data, error } = await supabase
-      .from('users')
-      .insert([userData])
+      .from('profiles')
+      .insert([newProfile])
       .select()
       .maybeSingle();
 
     if (error) {
-      console.error('❌ Error creating user profile:', error);
-      return null;
+      debugLog('Error inserting profile:', error);
+      
+      // If there's a constraint violation, try to fetch existing profile
+      if (error.code === '23505') { // Unique violation
+        debugLog('Profile already exists, fetching...');
+        return await loadUserProfile(userId);
+      }
+      throw error;
     }
 
-    console.log('✅ User profile created successfully:', data);
     window.userProfile = data;
+    debugLog('Profile created successfully:', data);
     return data;
   } catch (err) {
-    console.error('💥 Exception creating user profile:', err);
+    console.error('❌ Error creating profile:', err);
     return null;
   }
 }
 
 // --- Auth State Listener ---
 supabase.auth.onAuthStateChange(async (event, session) => {
-  console.log('🎭 AUTH STATE CHANGE:', event, session);
-  const currentPage = window.location.pathname.split("/").pop();
+  debugLog('Auth state changed', { event, session: !!session });
+  console.log('Full session:', session);
 
   if (session?.user) {
+    debugLog('User session found:', session.user.id);
     window.currentUser = session.user;
-    const profile = await loadUserProfile(session.user.id);
-    if (profile) window.userProfile = profile;
-
-    if ((currentPage === "login.html" || currentPage === "signup.html") && event === 'SIGNED_IN') {
-      setTimeout(() => window.location.href = "index.html", 800);
+    
+    // Load profile with retry logic
+    let profile = await loadUserProfile(session.user.id);
+    let retryCount = 0;
+    
+    while (!profile && retryCount < 3) {
+      debugLog(`Retrying profile load (attempt ${retryCount + 1})`);
+      await new Promise(resolve => setTimeout(resolve, 500));
+      profile = await loadUserProfile(session.user.id);
+      retryCount++;
     }
-
+    
     updateNavigationUI(true);
+
+    // Redirect if on auth pages
+    const currentPage = window.location.pathname;
+    debugLog('Current page:', currentPage);
+    
+    if ((currentPage.includes('login.html') || currentPage.includes('signup.html')) 
+        && event === 'SIGNED_IN') {
+      debugLog('Redirecting from auth page to index');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 800);
+    }
   } else {
+    debugLog('No user session, clearing state');
     window.currentUser = null;
     window.userProfile = null;
     updateNavigationUI(false);
   }
 });
 
-// --- DOM Loaded ---
-document.addEventListener("DOMContentLoaded", () => {
-  console.log('🏠 DOM LOADED - Setting up auth handlers');
+// --- DOM Ready ---
+document.addEventListener('DOMContentLoaded', () => {
+  debugLog('DOM loaded, initializing auth');
 
   // Initial session check
   supabase.auth.getSession().then(({ data: { session } }) => {
-    if (session) {
+    debugLog('Initial session check:', session ? 'Session found' : 'No session');
+    
+    if (session?.user) {
       window.currentUser = session.user;
+      debugLog('Session user:', session.user);
+      
       loadUserProfile(session.user.id).then(profile => {
-        if (profile) window.userProfile = profile;
+        debugLog('Profile loaded in init:', profile);
         updateNavigationUI(true);
+      }).catch(err => {
+        console.error('❌ Error loading profile on init:', err);
+        updateNavigationUI(false);
       });
     } else {
       updateNavigationUI(false);
     }
+  }).catch(err => {
+    console.error('❌ Error getting session:', err);
+    updateNavigationUI(false);
   });
 
-  const loginForm = document.getElementById("login-form");
-  const signupForm = document.getElementById("signup-form");
-
+  // Enhanced login form handler
+  const loginForm = document.getElementById('login-form');
   if (loginForm) {
-    loginForm.addEventListener("submit", async (e) => {
+    debugLog('Login form found');
+    
+    loginForm.addEventListener('submit', async e => {
       e.preventDefault();
+      if (isProcessingAuth) {
+        debugLog('Auth already processing');
+        return;
+      }
+      
       isProcessingAuth = true;
+      debugLog('Processing login...');
 
-      const email = loginForm.querySelector('input[type="email"]').value.trim();
-      const password = loginForm.querySelector('input[type="password"]').value.trim();
+      const emailInput = loginForm.querySelector('input[type="email"]');
+      const passwordInput = loginForm.querySelector('input[type="password"]');
+      
+      if (!emailInput || !passwordInput) {
+        alert('Login form fields not found');
+        isProcessingAuth = false;
+        return;
+      }
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      debugLog('Login attempt:', { email, passwordLength: password.length });
+
+      // Basic validation
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        isProcessingAuth = false;
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('Please enter a valid email address');
+        isProcessingAuth = false;
+        return;
+      }
 
       try {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        const { data, error } = await supabase.auth.signInWithPassword({ 
+          email, 
+          password 
+        });
+        
+        if (error) {
+          debugLog('Login error:', error);
+          
+          // User-friendly error messages
+          if (error.message.includes('Invalid login credentials')) {
+            alert('Incorrect email or password. Please try again.');
+          } else if (error.message.includes('Email not confirmed')) {
+            alert('Please confirm your email address before logging in.');
+          } else {
+            alert(`Login failed: ${error.message}`);
+          }
+          throw error;
+        }
+        
+        debugLog('Login successful:', data);
         alert('Login successful! Redirecting...');
-      } catch (error) {
-        console.error('Login error:', error);
-        alert(error.message || 'Login failed');
+        
+        // Clear form
+        loginForm.reset();
+        
+      } catch (err) {
+        console.error('❌ Login error:', err);
       } finally {
         isProcessingAuth = false;
+        debugLog('Login processing complete');
       }
     });
   }
 
+  // Enhanced signup form handler
+  const signupForm = document.getElementById('signup-form');
   if (signupForm) {
-    signupForm.addEventListener("submit", async (e) => {
+    debugLog('Signup form found');
+    
+    signupForm.addEventListener('submit', async e => {
       e.preventDefault();
+      if (isProcessingAuth) {
+        debugLog('Auth already processing');
+        return;
+      }
+      
       isProcessingAuth = true;
+      debugLog('Processing signup...');
 
-      const email = signupForm.querySelector('input[type="email"]').value.trim();
-      const password = signupForm.querySelector('input[type="password"]').value.trim();
-      const displayName = signupForm.querySelector('input[type="text"]')?.value.trim() || email.split('@')[0];
+      const emailInput = signupForm.querySelector('input[type="email"]');
+      const passwordInput = signupForm.querySelector('input[type="password"]');
+      const nameInput = signupForm.querySelector('input[type="text"]');
+      
+      if (!emailInput || !passwordInput) {
+        alert('Signup form fields not found');
+        isProcessingAuth = false;
+        return;
+      }
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+      const displayName = nameInput ? nameInput.value.trim() : email.split('@')[0];
+
+      debugLog('Signup attempt:', { 
+        email, 
+        passwordLength: password.length,
+        displayName 
+      });
+
+      // Enhanced validation
+      if (!email || !password) {
+        alert('Please fill in all required fields');
+        isProcessingAuth = false;
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('Please enter a valid email address');
+        isProcessingAuth = false;
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        isProcessingAuth = false;
+        return;
+      }
 
       try {
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
-          options: { data: { full_name: displayName } }
+          options: { 
+            data: { 
+              full_name: displayName 
+            },
+            emailRedirectTo: `${window.location.origin}/index.html`
+          }
         });
-        if (error) throw error;
-        if (data?.user) {
-          alert('Registration successful! Please confirm your email if required, then log in.');
-          window.location.href = "login.html";
+        
+        if (error) {
+          debugLog('Signup error:', error);
+          
+          if (error.message.includes('User already registered')) {
+            alert('This email is already registered. Please login instead.');
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 1000);
+          } else {
+            alert(`Signup failed: ${error.message}`);
+          }
+          throw error;
         }
-      } catch (error) {
-        console.error('Signup error:', error);
-        alert(error.message || 'Signup failed');
+        
+        debugLog('Signup successful:', data);
+        
+        if (data.user?.identities?.length === 0) {
+          alert('This email is already registered. Please check your email or try logging in.');
+        } else {
+          alert('Signup successful! Please check your email to confirm your account, then login.');
+        }
+        
+        // Clear form and redirect
+        signupForm.reset();
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 1500);
+        
+      } catch (err) {
+        console.error('❌ Signup error:', err);
       } finally {
         isProcessingAuth = false;
+        debugLog('Signup processing complete');
       }
     });
   }
 
-  // Google OAuth
-  const googleButton = document.getElementById('google-login') || document.getElementById('google-signup');
-  if (googleButton) {
-    googleButton.addEventListener("click", async () => {
+  // OAuth login (Google)
+  const googleButtons = document.querySelectorAll('#google-login, #google-signup');
+  googleButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if (isProcessingAuth) return;
+      
       isProcessingAuth = true;
+      debugLog('Starting Google OAuth');
+      
       try {
-        const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
+        const { error } = await supabase.auth.signInWithOAuth({ 
+          provider: 'google',
+          options: {
+            redirectTo: `${window.location.origin}/index.html`
+          }
+        });
+        
         if (error) throw error;
-      } catch (error) {
-        console.error('Google OAuth error:', error);
-        alert(error.message || 'OAuth failed');
+      } catch (err) {
+        console.error('❌ Google OAuth error:', err);
+        alert(err.message || 'Google login failed');
       } finally {
         isProcessingAuth = false;
       }
     });
-  }
+  });
 
-  // Logout
+  // Logout handler
   const logoutBtn = document.getElementById('nav-logout-btn');
   if (logoutBtn) {
-    logoutBtn.addEventListener('click', async (e) => {
+    debugLog('Logout button found');
+    
+    logoutBtn.addEventListener('click', async e => {
       e.preventDefault();
+      debugLog('Logout clicked');
+      
       try {
         const { error } = await supabase.auth.signOut();
         if (error) throw error;
+        
         window.currentUser = null;
         window.userProfile = null;
         updateNavigationUI(false);
+        
+        debugLog('Logout successful, redirecting...');
         window.location.href = 'index.html';
-      } catch (error) {
-        console.error('❌ Logout error:', error);
-        alert('Logout failed: ' + (error.message || 'unknown error'));
+        
+      } catch (err) {
+        console.error('❌ Logout error:', err);
+        alert('Logout failed: ' + (err.message || 'unknown error'));
       }
     });
   }
 });
-
-// --- Utility ---
-export function isAdmin() { return window.userProfile?.role === 'admin'; }
-export function getCurrentUser() { return window.currentUser; }
-export function getUserProfile() { return window.userProfile; }
