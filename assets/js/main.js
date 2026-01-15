@@ -17,7 +17,7 @@ const translations = {
 
     // Song Section
     'song.title': 'Song of the Week',
-    'song.name': 'Sasho Roman - Of, of',
+    'song.name': 'Stefan Merkov - Razsymva se',
     'song.playing': 'Now playing',
     'song.unsupported': 'Your browser does not support audio playback.',
     'song.backgroundAlt': 'Song of the week background',
@@ -250,7 +250,7 @@ const translations = {
 
     // Song Section
     'song.title': 'Песен на седмицата',
-    'song.name': 'Сашо Роман - Оф, оф',
+    'song.name': 'Стефан Мерков - Разсмя се',
     'song.playing': 'В момента звучи',
     'song.unsupported': 'Браузърът ви не поддържа аудио възпроизвеждане.',
     'song.backgroundAlt': 'Фон за песен на седмицата',
