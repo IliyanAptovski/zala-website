@@ -16,41 +16,25 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html" id="nav-home" data-i18n="nav.home">Home</a></li>
-        <li><a href="renovation.html" id="nav-renovation" data-i18n="nav.renovation">Renovation</a></li>
-        <li><a href="quotes.html" id="nav-quotes" data-i18n="nav.quotes">Quotes</a></li>
-        <li><a href="records.html" id="nav-records" data-i18n="nav.records">Records</a></li>
-        <li><a href="card-game.html" id="nav-card-game" data-i18n="nav.card-game">Kenef</a></li>
-        
-        <!-- These will be hidden when logged in -->
-        <li><a href="login.html" id="nav-login" data-i18n="nav.login">Login</a></li>
-        <li><a href="signup.html" id="nav-signup" data-i18n="nav.signup">Sign Up</a></li>
-        
-        <!-- These will be shown when logged in -->
-        <li id="nav-user-greeting" style="display:none;">
-          <span data-i18n="nav.greeting">Hello</span>, <span id="nav-user-name"></span>!
-        </li>
-        <li>
-          <button id="nav-logout-btn" style="display:none;" data-i18n="nav.logout">Logout</button>
-        </li>
+        <li><a href="index.html" id="nav-home">Начало</a></li>
+        <li><a href="renovation.html" id="nav-renovation">Реновация</a></li>
+        <li><a href="quotes.html" id="nav-quotes">Цитати</a></li>
+        <li><a href="records.html" id="nav-records">Рекорди</a></li>
+        <li><a href="" id="nav-records">Албум</a></li>
       </ul>
     </nav>
     <div class="navbar-controls">
       <div class="navbar-info">
-        <div class="navbar-hours" data-i18n="nav.hours">OPEN 24/7</div>
-        <div class="navbar-location" data-i18n="nav.location">Studena, Madan Municipality, Smolyan Province</div>
-      </div>
-      <div class="lang-toggle">
-        <button id="lang-en">🇬🇧</button>
-        <button id="lang-bg" class="active">🇧🇬</button>
+        <div class="navbar-hours">Отворено 24/7</div>
+        <div class="navbar-location">с. Студена, общ. Мадан, обл. Смолян</div>
       </div>
     </div>
   </header>
 
   <main class="content">
     <section class="records-hero">
-      <h1 data-i18n="records.title">Hall of Records</h1>
-      <p class="records-subtitle" data-i18n="records.subtitle">Celebrating extraordinary achievements and milestones</p>
+      <h1>Рекорди</h1>
+      <p class="records-subtitle">Отбелязваме изключителни постижения и рекорди</p>
     </section>
 
     <section class="records-container">
@@ -205,9 +189,6 @@
     <p id="footer-text">© Зала 2025</p>
   </footer>
   
-  <script type="module" src="assets/js/supabase-config.js"></script>
-  <script type="module" src="assets/js/supabase-auth.js"></script>
-  <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/navbar.js"></script>
   <script type="module" src="assets/js/transitions.js"></script>
 </body>
