@@ -18,36 +18,17 @@
     </div>
     <nav>
       <ul>
-        <!-- <li><a href="admin.html" id="nav-admin" data-i18n="nav.admin">Admin</a></li> -->
-
-
-        <li><a href="index.html" id="nav-home" data-i18n="nav.home">Home</a></li>
-        <li><a href="renovation.html" id="nav-renovation" data-i18n="nav.renovation">Renovation</a></li>
-        <li><a href="quotes.html" id="nav-quotes" data-i18n="nav.quotes">Quotes</a></li>
-        <li><a href="records.html" id="nav-records" data-i18n="nav.records">Records</a></li>
-        <li><a href="card-game.html" id="nav-card-game" data-i18n="nav.card-game">Kenef</a></li>
-
-        <!-- These will be hidden when logged in -->
-        <li><a href="login.html" id="nav-login" data-i18n="nav.login">Login</a></li>
-        <li><a href="signup.html" id="nav-signup" data-i18n="nav.signup">Sign Up</a></li>
-
-        <!-- These will be shown when logged in -->
-        <li id="nav-user-greeting" style="display:none;">
-          <span data-i18n="nav.greeting">Hello</span>, <span id="nav-user-name"></span>!
-        </li>
-        <li>
-          <button id="nav-logout-btn" style="display:none;" data-i18n="nav.logout">Logout</button>
-        </li>
+        <li><a href="index.html" id="nav-home">Начало</a></li>
+        <li><a href="renovation.html" id="nav-renovation">Реновация</a></li>
+        <li><a href="quotes.html" id="nav-quotes">Цитати</a></li>
+        <li><a href="records.html" id="nav-records">Рекорди</a></li>
+        <li><a href="" id="nav-records">Албум</a></li>
       </ul>
     </nav>
     <div class="navbar-controls">
       <div class="navbar-info">
-        <div class="navbar-hours" data-i18n="nav.hours">OPEN 24/7</div>
-        <div class="navbar-location" data-i18n="nav.location">Studena, Madan Municipality, Smolyan Province</div>
-      </div>
-      <div class="lang-toggle">
-        <button id="lang-en">🇬🇧</button>
-        <button id="lang-bg" class="active">🇧🇬</button>
+        <div class="navbar-hours">Отворено 24/7</div>
+        <div class="navbar-location">с. Студена, общ. Мадан, обл. Смолян</div>
       </div>
     </div>
   </header>
@@ -55,34 +36,34 @@
   <main class="content">
     <!-- Hero Section -->
     <section class="hero">
-      <h1 id="hero-title" data-i18n="hero.title">Добре дошли в Залата</h1>
-      <p id="hero-tagline" class="tagline" data-i18n="hero.tagline">
+      <h1 id="hero-title">Добре дошли в Залата</h1>
+      <p id="hero-tagline" class="tagline">
         „Ако не ни го дадеш, ще си го вземем сами!“
       </p>
     </section>
 
     <!-- News Section -->
     <section class="news-section">
-      <h2 data-i18n="news.title">Updates from the Zala</h2>
+      <h2>Актуално от Залата</h2>
       <div class="news-grid">
         <article class="news-card">
-          <h3 data-i18n="news.renovationUpdate">Renovation Progress</h3>
-          <p data-i18n="news.renovationText">
-            Completed the walls and the ceiling in the weightlifting room.
+          <h3>Напредък по ремонта</h3>
+          <p>
+            Ремонтът е завършен.
           </p>
-          <span class="news-date" data-i18n="news.date.renovation">November 2025</span>
+          <span class="news-date">Ноември 2025</span>
         </article>
         <article class="news-card">
-          <h3 data-i18n="news.newQuotes">New Quotes Added</h3>
-          <p data-i18n="news.quotesText">Six new quotes added.</p>
-          <span class="news-date" data-i18n="news.date.quotesAdded">October 2025</span>
+          <h3>Добавени цитати</h3>
+          <p>Добавени са шест нови цитата.</p>
+          <span class="news-date">Октомври 2025</span>
         </article>
       </div>
     </section>
 
     <!-- Song of the Week Section -->
     <section class="song-section">
-      <h2 data-i18n="song.title">Song of the Week</h2>
+      <h2>Песен на седмицата</h2>
 
       <div class="song-player loading">
         <!-- Video Background -->
@@ -101,7 +82,7 @@
         <!-- Player content -->
         <div class="song-name-wrapper">
           <div class="song-name-container">
-            <div class="song-name" data-i18n="song.name">Song Name</div>
+            <div class="song-name">Стефан Мерков - Разсмя се</div>
           </div>
         </div>
 
@@ -113,7 +94,7 @@
           <div id="song-time" class="song-time">0:00</div>
         </div>
 
-        <div id="now-playing" class="now-playing" data-i18n="song.playing" style="display: none;">NOW PLAYING</div>
+        <div id="now-playing" class="now-playing" style="display: none;">В момента звучи</div>
 
         <audio id="song-audio" preload="metadata">
           <source src="./assets/audio/song-of-the-week.mp3" type="audio/mpeg">
@@ -124,152 +105,147 @@
 
     <!-- Staff Section -->
     <section class="staff-section">
-      <h2 data-i18n="staff.title">Staff</h2>
+      <h2>Екип</h2>
       <div class="staff-grid">
 
         <!-- The Transformer Keeper -->
         <div class="staff-card">
-          <img src="./assets/img/staff/theTransformerKeeper.jpg" alt="The Transformer Keeper"
-            data-i18n-alt="staff.theTransformerKeeper.alt">
-          <h3 data-i18n="staff.theTransformerKeeper.name">The Transformer Keeper</h3>
-          <span class="staff-role" data-i18n="staff.theTransformerKeeper.role">Head of Maintenance</span>
-          <p data-i18n="staff.theTransformerKeeper.bio">Keeps the lights flickering — and the voices clear.</p>
-          <blockquote data-i18n="staff.theTransformerKeeper.quote">"The lights flicker… but I never forget."
-          </blockquote>
+          <img src="./assets/img/staff/theTransformerKeeper.jpg" alt="The Transformer Keeper">
+          <h3>Поддръжката на трансформатора</h3>
+          <span class="staff-role">Началник поддръжка</span>
+          <p>Поддържа светлините трептящи — и гласовете ясни</p>
+          <blockquote>"Светлините примигват…, но аз никога не забравям."</blockquote>
         </div>
 
         <!-- Denis -->
         <div class="staff-card">
-          <img src="./assets/img/staff/denis.jpg" alt="Denis" data-i18n-alt="staff.denis.alt">
-          <h3 data-i18n="staff.denis.name">Denis</h3>
-          <span class="staff-role" data-i18n="staff.denis.role">Breaks it and fixes it</span>
-          <p data-i18n="staff.denis.bio">Things always work out when I get fed up and just say “screw it.”</p>
-          <blockquote data-i18n="staff.denis.quote">"Whatever I touch ends up satisfied."</blockquote>
+          <img src="./assets/img/staff/denis.jpg" alt="Denis">
+          <h3>Денис</h3>
+          <span class="staff-role">Чупи и оправя</span>
+          <p>Нещата винаги стават като ми писне и му еба майката</p>
+          <blockquote>"Каквото пипне остава доволно."</blockquote>
         </div>
 
         <!-- Sevgin -->
         <div class="staff-card">
-          <img src="./assets/img/staff/sevgin.jpg" alt="Sevgin" data-i18n-alt="staff.sevgin.alt">
-          <h3 data-i18n="staff.sevgin.name">Sevgin</h3>
-          <span class="staff-role" data-i18n="staff.sevgin.role">Doctor of Chemistry</span>
-          <p data-i18n="staff.sevgin.bio">The strongest one in the Zala.</p>
-          <blockquote data-i18n="staff.sevgin.quote">"strikes first feels the end… no drama, just fact."</blockquote>
+          <img src="./assets/img/staff/sevgin.jpg" alt="Sevgin">
+          <h3>Севгин</h3>
+          <span class="staff-role">Доктор по химия</span>
+          <p>Най-мощният в залата.</p>
+          <blockquote>"Който ударя пръв той усеща края… без драма, просто факт."</blockquote>
         </div>
 
         <!-- Iliyan -->
         <div class="staff-card">
-          <img src="./assets/img/staff/iliyan.jpg" alt="Iliyan" data-i18n-alt="staff.iliyan.alt">
-          <h3 data-i18n="staff.iliyan.name">Iliyan</h3>
-          <span class="staff-role" data-i18n="staff.iliyan.role">Dev & Simple Man</span>
-          <p data-i18n="staff.iliyan.bio">Hanged twice, buried once.</p>
-          <blockquote data-i18n="staff.iliyan.quote">"Не мога да си държе ръкъть."</blockquote>
+          <img src="./assets/img/staff/iliyan.jpg" alt="Iliyan">
+          <h3>Илиян</h3>
+          <span class="staff-role">Общак и поддръжка на сайта</span>
+          <p>Два пъти обесен, веднъж заровен.</p>
+          <blockquote>"Въже за бесене с безплатен монтаж."</blockquote>
         </div>
 
         <!-- Sevdi -->
         <div class="staff-card">
-          <img src="./assets/img/staff/sevdi.jpg" alt="Sevdi" data-i18n-alt="staff.sevdi.alt">
-          <h3 data-i18n="staff.sevdi.name">Sevdi</h3>
-          <span class="staff-role" data-i18n="staff.sevdi.role">Master of Absence</span>
-          <p data-i18n="staff.sevdi.bio">Delesanhills member.</p>
-          <blockquote data-i18n="staff.sevdi.quote">"Where there’s work, I’ve got no business being there."</blockquote>
+          <img src="./assets/img/staff/sevdi.jpg" alt="Sevdi">
+          <h3>Севди</h3>
+          <span class="staff-role">Владетелят на отсъствието</span>
+          <p>Делесанхийлс мембър</p>
+          <blockquote>"Там дето има работа аз нямам работа."</blockquote>
         </div>
 
         <!-- Selvi -->
         <div class="staff-card">
-          <img src="./assets/img/staff/selvi.jpg" alt="selvi" data-i18n-alt="staff.selvi.alt">
-          <h3 data-i18n="staff.selvi.name">Selvi</h3>
-          <span class="staff-role" data-i18n="staff.selvi.role">Spreads, wipes, and rubs</span>
-          <p data-i18n="staff.selvi.bio">If there’s a hole I know hot to fix it.</p>
-          <blockquote data-i18n="staff.selvi.quote">"I plug holes of every kind."</blockquote>
+          <img src="./assets/img/staff/selvi.jpg" alt="selvi">
+          <h3>Селви</h3>
+          <span class="staff-role">Маже, трие и брише</span>
+          <p>Щом има дупка, знам как да я оправя</p>
+          <blockquote>"Запушвам дупки всекакви."</blockquote>
         </div>
 
         <!-- Dani -->
         <div class="staff-card">
-          <img src="./assets/img/staff/dani.jpg" alt="Dani" data-i18n-alt="staff.dani.alt">
-          <h3 data-i18n="staff.dani.name">Dani</h3>
-          <span class="staff-role" data-i18n="staff.dani.role">The Craftsman</span>
-          <p data-i18n="staff.dani.bio">If something blows up, it’s either a storm — or I’m fixing the cables.</p>
-          <blockquote data-i18n="staff.dani.quote">"Can or can’t — just make it work somehow."</blockquote>
+          <img src="./assets/img/staff/dani.jpg" alt="Dani">
+          <h3>Дани</h3>
+          <span class="staff-role">"Майстора"</span>
+          <p>Ако гръмне нещо, или е буря, или аз оправям кабелите</p>
+          <blockquote>"Може, не може правя го някак."</blockquote>
         </div>
 
         <!-- Veli -->
         <div class="staff-card">
-          <img src="./assets/img/staff/veli.jpg" alt="Veli" data-i18n-alt="staff.veli.alt">
-          <h3 data-i18n="staff.veli.name">Veli</h3>
-          <span class="staff-role" data-i18n="staff.veli.role">The American Wire Guy</span>
-          <p data-i18n="staff.veli.bio">Comes over from America every now and then during the summer.</p>
-          <blockquote data-i18n="staff.veli.quote">"I plan to produce massive amounts of manure."</blockquote>
+          <img src="./assets/img/staff/veli.jpg" alt="Veli">
+          <h3>Вели</h3>
+          <span class="staff-role">Американския Жичкажия</span>
+          <p>Дохада от Америка чат пат летоска</p>
+          <blockquote>""Възнамерявам да произвеждам огромни количества гибре."</blockquote>
         </div>
 
         <!-- Viki -->
         <div class="staff-card">
-          <img src="./assets/img/staff/viki.jpg" alt="Viki" data-i18n-alt="staff.viki.alt">
-          <h3 data-i18n="staff.viki.name">Abla Mediha</h3>
-          <span class="staff-role" data-i18n="staff.viki.role">Recites Ezan through the window.</span>
-          <p data-i18n="staff.viki.bio">Hosgeldin – hosbulduk.</p>
-          <blockquote data-i18n="staff.viki.quote">"Syusyulman."</blockquote>
+          <img src="./assets/img/staff/viki.jpg" alt="Viki">
+          <h3>Абла Медиха</h3>
+          <span class="staff-role">Рука езан през жема</span>
+          <p>Хошкелдин – хошбулдук</p>
+          <blockquote>"Сюсюлман."</blockquote>
         </div>
 
         <!-- Gabi -->
         <div class="staff-card">
-          <img src="./assets/img/staff/gabi.jpg" alt="Gabi" data-i18n-alt="staff.gabi.alt">
-          <h3 data-i18n="staff.gabi.name">Gabi</h3>
-          <span class="staff-role" data-i18n="staff.gabi.role">Animal Planet</span>
-          <p data-i18n="staff.gabi.bio">Promises miracles for money.</p>
-          <blockquote data-i18n="staff.gabi.quote">"Give me €50,000 and I’ll deliver him for one day."</blockquote>
+          <img src="./assets/img/staff/gabi.jpg" alt="Gabi">
+          <h3>Габи</h3>
+          <span class="staff-role">Енимал планет</span>
+          <p>Обещавам чудеса срещу пари</p>
+          <blockquote>"Дай ми €50,000 и ти го давам за един ден."</blockquote>
         </div>
 
         <!-- Aylin -->
         <div class="staff-card">
-          <img src="./assets/img/staff/aylin.jpg" alt="Aylin" data-i18n-alt="staff.aylin.alt">
-          <h3 data-i18n="staff.aylin.name">Aylin</h3>
-          <span class="staff-role" data-i18n="staff.aylin.role">Minx</span>
-          <p data-i18n="staff.aylin.bio">Buchoskoto.</p>
-          <blockquote data-i18n="staff.aylin.quote">"Proud agent of Rudozem Enterprise."</blockquote>
+          <img src="./assets/img/staff/aylin.jpg" alt="Aylin">
+          <h3>Айлин</h3>
+          <span class="staff-role">Минкс</span>
+          <p>Бучоското</p>
+          <blockquote>"Горд представител на Рудозем Ентърпрайс."</blockquote>
         </div>
       </div>
     </section>
 
     <!-- Location Section -->
     <section class="location-section">
-      <h2 data-i18n="location.title">Find Us</h2>
-      <p data-i18n="location.subtitle">The Zala is everywhere the stories are told</p>
+      <h2>Намери ни</h2>
+      <p>Очакваме те</p>
 
       <div class="location-info">
         <div class="location-card">
-          <h3 data-i18n="location.physical.title">Physical Space</h3>
-          <p data-i18n="location.physical.address">The Old University Hall</p>
-          <p data-i18n="location.physical.city">Sofia, Bulgaria</p>
-          <p data-i18n="location.physical.description">Where the walls first started whispering</p>
+          <h3>Адрес</h3>
+          <p>Кметство, с. Студена, 1-ви етаж</p>
+          <p>с. Студена, обл. Мадан, общ. Смолян</p>
+          <p>Там, където започна всичко.</p>
         </div>
 
         <div class="location-card">
-          <h3 data-i18n="location.digital.title">Digital Presence</h3>
-          <p data-i18n="location.digital.platform">Always available online</p>
-          <p data-i18n="location.digital.access">Accessible from anywhere, anytime</p>
-          <p data-i18n="location.digital.description">The echo travels through the digital realm</p>
+          <h3>Дигитално присъствие</h3>
+          <p>Винаги достъпна онлайн</p>
+          <p>Достъпна от всяко място, по всяко време.</p>
+          <p>Където и да, когато и да е.</p>
         </div>
       </div>
     </section>
 
     <!-- Support Section -->
     <section class="support-section">
-      <h2 data-i18n="support.title">Support & Connection</h2>
-      <p data-i18n="support.text">Support the Zala and help us uncover forgotten memories.</p>
+      <h2>Подкрепа и връзка</h2>
+      <p>Подкрепи Залата</p>
       <div class="support-options">
-        <button class="support-btn donate-btn" data-i18n="support.donateButton">Donate</button>
-        <button class="support-btn share-btn" data-i18n="support.shareButton">Contact Us</button>
+        <button class="support-btn donate-btn">Дари</button>
+        <button class="support-btn share-btn">Свържете се с нас</button>
       </div>
     </section>
   </main>
 
   <footer>
-    <p id="footer-text" data-i18n="footer.text">© Зала 2025</p>
+    <p id="footer-text">© Зала 2025</p>
   </footer>
 
-  <script type="module" src="assets/js/supabase-config.js"></script>
-  <script type="module" src="assets/js/supabase-auth.js"></script>
-  <script type="module" src="assets/js/main.js"></script>
   <script type="module" src="assets/js/navbar.js"></script>
   <script type="module" src="assets/js/transitions.js"></script>
   <script src="assets/js/home-audio.js"></script>
