@@ -17,7 +17,7 @@
 
 .records-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -51,8 +51,8 @@
 }
 
 .person-photo {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 2px solid var(--accent-color);
     object-fit: cover;
@@ -71,8 +71,8 @@
 }
 
 .record-image {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--accent-color);
@@ -163,12 +163,12 @@
     }
     
     .person-photo {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
     
     .record-image {
-        width: 80px;
-        height: 80px;
+        width: 200px;
+        height: 200px;
     }
 }
